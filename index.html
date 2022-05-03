@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Formulário de Agendamento</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/museu-favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    />
+
+    <!-- Calendar -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <!-- Calendar -->
+    <link rel="stylesheet" href="css/Calendario.css">
+
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+
+    <header class="text-center bg-image p-0"
+    style="
+      background-image: url('./img/porta.jpg');
+      height: 400px;
+
+    ">
+<div id="id-header" class="vh-100 d-flex flex-column p-0" style="background-color: rgba(0, 0, 0, 0.568);">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg container-fluid p-0">
+        <div class="ms-auto">
+          
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarMenu"
+            aria-controls="navbarMenu"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarMenu">
+            <div class="position-absolute top-0 start-0 p-3 p-t-3 text-white">
+              <p class="fs-5">
+                <img src="./img/logo_museu.png" alt="Logo do museu de computação" width="80">
+                Site Museu ICMC
+              </p> 
+            </div>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item active ">
+                <a class="nav-link" aria-current="page" href="#">Museu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Sobre o Museu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Exposições Virtuais</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Exposições Locais</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Doações</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Visita Guiada</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Museu na mídia</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Navbar -->
+
+
+          <div class="d-flex justify-content-center align-items-center">
+            <div class="text-white justify-content-center align-items-center">
+              <h1 class="mb-3">Agendamento de Visita Guiada</h1>
+              <div class="d-flex flex-column justify-content-center align-items-center">
+                  <hr class="hr-light col-sm-6">
+
+                  <!-- <h4 class="mb-3"></h4> -->
+                  <p class="mb-3 col-sm-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellendus quasi fuga nesciunt dolorum nulla magnam veniam sapiente, fugiat! Commodi sequi non animi ea dolor molestiae, quisquam iste, maiores. Nulla.</p>
+                </div>
+            </div>
+          </div>
+
+
+</div>    
+    </header>
+
+<!-- main -->
+
+    <main class="d-flex flex-column justify-content-center align-items-center fonts-custom-2">
+      <div>
+        <h1 class="fonts-custom">Preencha seus dados</h1>
+      </div>
+      
+      <!-- Form -->
+      <form action="" class="">
+        <div class="p-3 mb-3">
+
+          <!-- Dados visitante -->
+          <section class="mb-3">
+            <h5 class="fonts-custom fs-4">Responsável pela Visita</h1>
+              <div class="justify-content-center align-items-center mb-3">
+                <input class="form-control mb-2" type="text" placeholder="Nome completo" id="fullname" required>
+                <input class="form-control mb-2" type="text" placeholder="Ocupação" id="employment" required>
+                <input class="form-control mb-2" type="text" placeholder="E-mail" id="email" required>
+                <input class="form-control mb-2" type="text" placeholder="Telefone(Opcional)" id="phonenumber">
+              </div>
+          </section>
+          <!-- Dados visitante -->
+
+          <!-- Dados instituição -->
+           <section class="mb-3">
+              <h5 class="fonts-custom fs-4">Dados da Instituição</h3>
+                <div class="justify-content-center align-items-center mb-3">
+                  <input class="form-control mb-2" type="text" placeholder="Nome da instituição" id="institution-name" required>
+                  
+                  <div class="input-group mb-2">
+                    <select class="form-select" required aria-label="Selecione o tipo de organização" id="group-select" name="group-select" aria-required="true">
+                      <option value="">Selecione o tipo de organização</option>
+                      <option value="Escola pública de ensino fundamental">Escola pública de ensino fundamental</option>
+                      <option value="Escola pública de ensino médio">Escola pública de ensino médio</option>
+                      <option value="Escola pública de ensino fundamental e médio">Escola pública de ensino fundamental e médio</option>
+                      <option value="Escola privada de ensino fundamental">Escola privada de ensino fundamental</option>
+                      <option value="Escola privada de ensino médio">Escola privada de ensino médio</option>
+                      <option value="Escola privada de ensino fundamental e médio">Escola privada de ensino fundamental e médio</option>
+                      <option value="Instituição pública de ensino superior">Instituição pública de ensino superior</option>
+                      <option value="Instituição privada de ensino superior">Instituição privada de ensino superior</option>
+                      <option value="Educação especial">Educação especial</option>
+                      <option value="Empresa pública">Empresa pública</option>
+                      <option value="Empresa privada">Empresa privada</option>
+                      <option value="ONG - Organização não governamental">ONG - Organização não governamental</option>
+                      <option value="Outros">Outros</option>
+                    </select>
+                  </div>
+
+                  <div id="others-org">
+                  </div>
+
+                  <input class="form-control mb-2" type="text" placeholder="CEP" id="cep" required>
+                  <div class="d-flex flex-row">
+                      <input class="form-control mb-2 pr-3 me-2" type="text" placeholder="Rua" id="rua" required>
+                      <div class="col-xs-1">
+                        <input class="form-control mb-2 col-xs-1" type="number" placeholder="Número" required>
+                      </div>
+                  </div>
+                  <input class="form-control mb-2" type="text" placeholder="Bairro" id="bairro" required>
+                  <div class="d-flex flex-row">
+                      <input class="form-control mb-2 me-2" type="text" placeholder="Cidade" id="cidade" required>
+                    <div class="col-xs-1">
+                          <input class="form-control mb-2" type="text" placeholder="UF" id="uf" required>
+                      </div>
+                  </div>
+                </div>                
+           </section>
+          <!-- Dados instituição -->
+
+
+          <!-- Dados Necessidade especial -->
+           <section class="mb-3">
+            <h5 class="fonts-custom fs-4">Necessidade Especial</h3>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitch-especial" />
+              <label class="form-check-label" for="flexSwitch-especial">Possui necessidade especial? </label>
+            </div>
+            <textarea id="tipo-necessidade" class="form-control" aria-label="With textarea" placeholder="Indique qual" disabled required></textarea>
+           </section>
+          <!-- Dados Necessidade especial -->
+
+          <!-- Dados periodo visitação -->
+           <section class="mb-5">
+            <h5 class="fonts-custom fs-4">Período de Visitação</h3>
+              <span>Escolha uma data</span>
+              <input class="form-control" type="date" id="initial-date" required/>
+              <span>Informe o número de visitantes</span>
+              <input class="form-control mb-2" type="number" id="initial-visitor" required/>
+              <div id="segunda-visita">
+              </div>
+              <button id="btn-add-date" type="button" class="btn btn-outline-info" data-mdb-ripple-color="dark">Adicionar outra data para visita</button>
+              <button id="btn-remove-date" type="button" class="btn btn-outline-danger" data-mdb-ripple-color="dark" hidden>Excluir data</button>
+              <!-- Segunda data -->
+              <div id="data-segunda-visita">
+              </div>
+              <!-- Segunda data -->
+              <!--  -->
+              <div id="data-terceira-visita">
+              </div>
+              <!--  -->
+
+           </section>
+          <!-- Dados periodo visitação -->
+
+
+          
+
+            <div class="d-grid gap-2 col-9 mx-auto mb-6">
+              <button class="btn btn-primary btn-lg" style="background-color: #25d366;" type="submit" data-mdb-toggle="modal" data-mdb-target="#mModal">Enviar</button>
+            </div>
+
+        </div>
+
+
+      </form>
+      <!-- Form -->
+    </main>
+
+<!-- main -->
+
+<!-- Modal -->
+<div id="Modal" class="modal fade" tabindex="-1" role="Caixa de dialogo com mensagem de envio com sucesso">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Sucesso</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" data-mdb-toggle="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Fique atento! Um representante do museu entrará em contato com você para confirmar sua visita.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-mdb-toggle="modal" data-bs-dismiss="modal">Fechar</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+
+<!-- Modal CEP Not Found -->
+<div id="modal-cep-not-found" class="modal fade" tabindex="-1" role="Caixa de dialogo com mensagem de cep não encontrado">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Erro</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" data-mdb-toggle="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>CEP não encontrado.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-mdb-toggle="modal" data-bs-dismiss="modal">Fechar</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal CEP Not Found-->
+
+<!-- Modal Invalid CEP -->
+<div id="modal-invalid-cep" class="modal fade" tabindex="-1" role="Caixa de dialogo com mensagem de Formato de CEP inválido.">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Erro</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" data-mdb-toggle="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Formato de CEP inválido.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-mdb-toggle="modal" data-bs-dismiss="modal">Fechar</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Invalid CEP -->
+
+<!-- Modal Erro data -->
+<div id="modal-invalid-day" class="modal fade" tabindex="-1" role="Caixa de dialogo com mensagem de dia da semana inválido.">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Erro</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" data-mdb-toggle="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>O museu não atende aos finais de semana. Escolha outra data.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-mdb-toggle="modal" data-bs-dismiss="modal">Fechar</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Erro data -->
+<!-- Modal Erro email -->
+<div id="modal-invalid-email" class="modal fade" tabindex="-1" role="Caixa de dialogo com mensagem de email inválido.">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Erro</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" data-mdb-toggle="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Email inválido, tente novamente.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-mdb-toggle="modal" data-bs-dismiss="modal">Fechar</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Erro email -->
+<!-- Modal Erro phonenumber -->
+<div id="modal-invalid-phonenumber" class="modal fade" tabindex="-1" role="Caixa de dialogo com mensagem de email inválido.">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Erro</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" data-mdb-toggle="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Telefone inválido, tente novamente.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-mdb-toggle="modal" data-bs-dismiss="modal">Fechar</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Erro phonenumber -->
+
+<!-- Footer -->
+<footer class="bg-dark text-center text-white mt-auto">
+  <!-- Grid container -->
+  <div class="container p-4">
+              <!-- Section: Social media -->
+              <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/icmc.usp" role="button"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+
+                <!-- Twitter -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/icmc_usp" role="button"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+
+                <!-- Google -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                  ><i class="fab fa-google"></i
+                ></a>
+
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/icmc.usp" role="button"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+
+              </section>
+              <!-- Section: Social media -->
+      
+      <!-- Grid row -->
+      <div class="row text-md-start">
+              <!-- Section: Text -->
+              <section class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                <div class="row">
+                    <p>
+                      ENDEREÇO
+                      <br>
+                      <br>
+                      Museu de Computação Prof. Odelar Leite Linhares <br> Instituto de Ciências e Matemáticas e de Computação - ICMC <br> Universidade de São Paulo - USP
+                      <br>
+                      Avenida Trabalhador São-Carlense, nº 400, Centro. <br> CEP 13566-590 - São Carlos - SP
+                      <br>
+                      <br>
+                      HORÁRIO DE FUNCIONAMENTO
+                      <br>
+                      <br>
+                      Segunda à Sexta-feira <br> das 8h00 às 18h00
+                      <br>
+                      <br>
+                      CONTATO
+                      <br>
+                      <br>
+                      Telefone: (16) 3373-9146 <br> E-mail: museu@icmc.usp.br
+                    </p>
+                    <p>
+                      Desenvolvido pelos alunos da <a href="https://www.univesp.br"> <img src="/img/Univesp_logo_png_rgb.png" alt="Logo marca da universidade virtual do estado de são paulo" width="200px"></a> <br>
+                      BRUNA DOS SANTOS SAMPAIO <br>
+                      DOUGLAS TOFFOLETTO <br>
+                      FERNANDA MARIA DIAS DE GOZ <br>
+                      MARCELO LAZARO DE OLIVEIRA <br>
+                      PAULO SOUZA DANEU <br>
+                      VITOR B. R. SILVA <br>
+                      VIVIANE BEZERRA CAMPOS
+                    </p>
+                </div>
+              </section>
+              <!-- Section: Text -->
+
+              
+
+              <!-- Section: Links -->
+              <section class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                <!--Grid row-->
+                <div class="row">
+                  <!--Grid column-->
+                  <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Museu</h5>
+
+                    <ul class="list-unstyled mb-0">
+                      <li>
+                        <a href="#!" class="text-white">O Fundador</a>
+                      </li>
+                      <li>
+                        <a href="#!" class="text-white">História do Museu</a>
+                      </li>
+                      <li>
+                        <a href="#!" class="text-white">Sobre o Museu</a>
+                      </li>
+                      <li>
+                        <a href="#!" class="text-white">Exposições Virtuais</a>
+                      </li>
+                      <li>
+                        <a href="#!" class="text-white">Exposições Locais</a>
+                      </li>
+                      <li>
+                        <a href="#!" class="text-white">Museu na mídia</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <!--Grid column-->
+
+                  <!--Grid column-->
+                  <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Links</h5>
+
+                    <ul class="list-unstyled mb-0">
+                      <li>
+                        <a href="#!" class="text-white">Doações</a>
+                      </li>
+                      <li>
+                        <a href="#!" class="text-white">Agendamento de Visita Guiada</a>
+                      </li>
+
+                    </ul>
+                  </div>
+                  <!--Grid column-->
+                  <!--Grid column-->
+                  <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Links</h5>
+
+                    <ul class="list-unstyled mb-0">
+                      <li>
+                        <a href="#!" class="text-white">Área restrita</a>
+                      </li>
+                      <!-- <li>
+                        <a href="#!" class="text-white">Desenvolvimento</a>
+                      </li> -->
+                    </ul>
+                  </div>
+                  <!--Grid column-->
+                  
+                </div>
+                <!--Grid row-->
+              </section>
+              <!-- Section: Links -->
+      </div>
+      <!-- Grid row -->
+ </div>
+ <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2022 Copyright:
+    <a class="text-white" href="https://mc.icmc.usp.br/">mc.icmc.usp.br</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+
+
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/main.js"></script>
+  
+  </body>
+</html>
