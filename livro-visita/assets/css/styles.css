@@ -16,6 +16,7 @@ h1, h2 {
 }
 .body-background{
     background-color: rgba(0, 0, 0, 0.877);
+    height: 100%;
 }
 body {
     font-family: 'Roboto', sans-serif;
