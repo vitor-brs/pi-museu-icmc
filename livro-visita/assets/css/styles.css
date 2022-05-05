@@ -12,11 +12,19 @@ h1, h2 {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100%;
+    /* height: 100%; */
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    border: 0px 0px 0px 0px;
 }
 .body-background{
     background-color: rgba(0, 0, 0, 0.877);
+    /* background-position: center; */
+    /* background-size: cover; */
+    background-repeat: repeat;
     height: 100%;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
 }
 body {
     font-family: 'Roboto', sans-serif;
@@ -25,6 +33,8 @@ body {
     color: #888;
     line-height: 30px;
     text-align: center;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
 }
 body, html{
     height: 100%;
