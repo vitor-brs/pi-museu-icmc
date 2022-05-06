@@ -97,31 +97,31 @@
                                   <input type="text" id="profession" placeholder="Ocupação" class="form-control">
                               </div>
                               <div class="form-group">
-                                  <label for="zipcode" class=""></label>
-                                  <input type="text" id="zipcode" placeholder="CEP" class="form-control">
+                                  <label for="cep" class=""></label>
+                                  <input type="text" id="cep" placeholder="CEP" class="form-control">
                               </div>
                               <div class="form-group row">
                                   <div class="col-sm-9">
-                                      <label for="address" class=""></label>
-                                      <input type="text" id="address" placeholder="Rua" class="form-control">
+                                      <label for="rua" class=""></label>
+                                      <input type="text" id="rua" placeholder="Rua" class="form-control">
                                   </div>
                                   <div class="col-sm-3">
                                       <label for="number-address" class=""></label>
-                                      <input type="text" id="number-address" placeholder="Número" class="form-control">
+                                      <input type="number" id="number-address" placeholder="Número" class="form-control">
                                   </div>
                               </div>
                               <div class="form-group">
-                                  <label for="district" class=""></label>
-                                  <input type="text" id="district" placeholder="Bairro" class="form-control">
+                                  <label for="bairro" class=""></label>
+                                  <input type="text" id="bairro" placeholder="Bairro" class="form-control">
                               </div>
                               <div class="form-group row">
                                   <div class="col-sm-9">
-                                      <label for="city" class=""></label>
-                                      <input type="text" id="city" placeholder="Cidade" class="form-control">
+                                      <label for="cidade" class=""></label>
+                                      <input type="text" id="cidade" placeholder="Cidade" class="form-control">
                                   </div>
                                   <div class="col-sm-3">
-                                      <label for="state" class=""></label>
-                                      <input type="text" id="state" placeholder="UF" class="form-control">
+                                      <label for="uf" class=""></label>
+                                      <input type="text" id="uf" placeholder="UF" class="form-control">
                                   </div>
                               </div>
                               <div class="form-group mb-3">
@@ -138,8 +138,69 @@
     </div>
 </div>
 
+<!-- Modal -->
+<div id="Modal" class="modal fade" tabindex="-1" role="Caixa de dialogo com mensagem de envio com sucesso">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Sucesso</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" data-mdb-toggle="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Fique atento! Um representante do museu entrará em contato com você para confirmar sua visita.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-mdb-toggle="modal" data-bs-dismiss="modal">Fechar</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+
+<!-- Modal CEP Not Found -->
+<div id="modal-cep-not-found" class="modal fade" tabindex="-1" role="Caixa de dialogo com mensagem de cep não encontrado">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Erro</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" data-mdb-toggle="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>CEP não encontrado.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-mdb-toggle="modal" data-bs-dismiss="modal">Fechar</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal CEP Not Found-->
+
+<!-- Modal Invalid CEP -->
+<div id="modal-invalid-cep" class="modal fade" tabindex="-1" role="Caixa de dialogo com mensagem de Formato de CEP inválido.">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Erro</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" data-mdb-toggle="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Formato de CEP inválido.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-mdb-toggle="modal" data-bs-dismiss="modal">Fechar</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Invalid CEP -->
+
 <script type="text/javascript" src="/js/mdb.min.js"></script>
-<script src="/js/jquery.min.js"></script>
-<script src="/js/popper.js"></script>
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/popper.js"></script>
+<script type="text/javascript" src="/livro-visita/assets/js/scripts.js"></script>
 </body>
 </html>
