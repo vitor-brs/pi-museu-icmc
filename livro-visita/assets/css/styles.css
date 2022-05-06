@@ -6,13 +6,11 @@ h1, h2 {
     line-height: 50px;
 }
 .body-background-image{
-    /* background-image: url("../img/MuseuEntrada.png"); */
     background-image: url("../img/pexels-karolina-grabowska-4467739.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    /* height: 100%; */
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
     border: 0px 0px 0px 0px;
