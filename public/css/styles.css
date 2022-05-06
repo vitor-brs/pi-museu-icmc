@@ -1,0 +1,123 @@
+.nav-link {
+    color: white;
+    
+}
+.nav-link:hover {
+    color: rgb(12, 156, 77);
+    
+}
+
+.register-form{
+    width: 400px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+.form-div{
+    background-color: rgb(247, 247, 247);
+    margin: 0px 0px 0px 0px;
+    border-radius: 5px;
+}
+.secao{
+    background-color: white;
+    padding: 50px 50px 50px 50px;
+    box-shadow: 10px 5px 15px rgb(159, 160, 161);
+    border-radius: 10px;
+}
+.fonts-custom{
+    font-family: 'Roboto', sans-serif;
+}
+.fonts-custom-2{
+    font-family: IBM, teko_regular, opensans, Helvetica Neue, Segoe UI,Roboto,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    
+}
+@font-face {
+    font-family: montserrat;
+    src: url(./Montserrat/Montserrat-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: anton;
+    src: url(./Anton/Anton-Regular.ttf);
+}
+@font-face {
+    font-family: opensans;
+    src: url(./Open_Sans/static/OpenSans/OpenSans-Regular.ttf);
+}
+@font-face{
+    font-family: opensans-light;
+    src: url(/css/Open_Sans/static/OpenSans/OpenSans-Light.ttf);
+}
+@font-face {
+    font-family: teko;
+    src: url(./Teko/Teko-SemiBold.ttf);
+}
+@font-face {
+    font-family: teko_regular;
+    src: url(./Teko/Teko-Regular.ttf);
+}
+@font-face {
+    font-family: IBM;
+    src: url(./IBM_Plex_Sans_Thai_Looped/IBMPlexSansThaiLooped-Regular.ttf);
+}
+.input-border-color {
+
+ color: rgb(185, 200, 227);
+}
+.btn-horarios {
+    padding: 0px, 0px, 0px, 0px;
+    margin: 0px, 0px, 0px, 0px;
+    border: 1px solid #6587e4;
+    width: 100px;
+    font: bold;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.btn-horarios:hover {
+    color: white;
+    background-color: #6587e4;
+}
+
+.ul-custom {
+    display :inline-flex;
+padding: 10px;
+margin-bottom: 5px;
+    list-style-type: none;
+}
+.li-custom {
+    margin-right: 10px;
+    margin-bottom: 15px;
+    padding: 0px 0px 0px 0px;
+}
+.calendario {
+    width: 25%;
+}
+.negrito {
+    font: bold;
+}
+@media screen and (max-width:1220px) {
+    .calendario {width: 30%;}
+  }
+  @media screen and (max-width:1020px) {
+    .calendario {width: 50%;}
+  }
+  @media screen and (max-width:920px) {
+    .calendario {width: 50%;}
+  }
+  @media screen and (max-width:820px) {
+    .calendario {width: 50%;}
+    .secao { padding: auto;}
+  }
+@media screen and (max-width:720px) {
+    .calendario {width: 100%;}
+    .secao { padding: 10px;}
+  }
+  
+  @media screen and (max-width: 420px) {
+    .calendario {width: 100%;}
+    .secao { padding: 10px;}
+
+  }
+  
+  @media screen and (max-width: 290px) {
+    .calendario {width: 100%;}
+    .secao { padding: 10px;}
+  }
+  
