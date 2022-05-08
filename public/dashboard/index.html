@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    
+    <link rel="icon" href="../img/museu-favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/mdb.min.css" />
+    <link rel="stylesheet" href="../css/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/fabric-icons-inline.css">
+
+    <link rel="stylesheet" href="../css/dashboard/styles.css" />
+    <link rel="stylesheet" href="../css/dashboard/main.css" />
+    <link rel="import" href="/dashboard/main.html">
+</head>
+<body>
+    <!-- Navbar -->
+<nav class="navbar text-white fixed-top">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <div class="justify-content-start">
+        <!-- Toggle button -->
+      <button
+      id="btnMenuExpand"
+      class="navbar-toggler p-0"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target=".navbar-collapse"
+      aria-controls="home agenda relatorios visitantes"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="ms-Icon ms-Icon--GlobalNavButton text-white"></i>
+    </button>
+
+  <!-- Collapsible wrapper -->
+      <!-- Navbar brand navbar-brand -->
+      <a id="menuExpand" class="text-white mx-4 fonts-custom" href="#">
+          Dashboard
+      </a>
+      </div>
+      <!-- Collapsible wrapper -->
+
+      <!-- Right elements -->
+      <div class="d-flex align-items-center">
+        <!-- Icon -->
+        <a class="text-reset me-3" href="#" type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#aboutModal">
+          <i class="ms-Icon ms-Icon--Help"></i>
+        </a>
+  
+
+        <!-- Avatar -->
+        <div class="dropdown">
+          <a
+            class="dropdown-toggle d-flex align-items-center hidden-arrow text-white"
+            href="#"
+            id="navbarDropdownMenuAvatar"
+            role="button"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
+              src="../img/dashboard/user_ink.svg"
+              class="rounded-circle"
+              height="25"
+              alt="Figura com desenho de avatar"
+              loading="lazy"
+            />
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="navbarDropdownMenuAvatar"
+          >
+            <li>
+              <a class="dropdown-item" href="#" type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#logoutModal">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Right elements -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+    
+
+    <aside>
+        <div id="sidebarMenu" class="d-flex flex-column flex-shrink-0 align-items-top sidebarMenuExpand">    
+            <ul class="nav flex-column mb-0">
+                <li class="nav-item w-100 pt-0 mb-0 li-active">
+                        <a href="/" class="nav-link link-dark d-flex active">
+                        <i class="ms-Icon ms-Icon--Home me-2 fs-6 my-1"></i>
+                        <span id="home" class="collapse navbar-collapse my-1">Home</span>
+                        </a>
+                </li>
+            </ul>
+            <hr class="my-1">
+            <ul class="nav flex-column mb-auto">
+              <li class="nav-item">
+                <a href="#" class="nav-link link-dark d-flex">
+                        <i class="ms-Icon ms-Icon--Calendar me-2 fs-6 my-1"></i>
+                        <span id="agenda" class="collapse navbar-collapse">Agenda</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link link-dark d-flex">
+                  <i class="ms-Icon ms-Icon--ReportDocument me-2 fs-6 my-1"></i>
+                  <span id="relatorios" class="collapse navbar-collapse">Relatórios</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link link-dark d-flex">
+                    <i class="ms-Icon ms-Icon--People me-2 fs-6 my-1"></i>
+                    <span id="visitantes" class="collapse navbar-collapse">Visitantes</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link link-dark d-flex">
+                  <i class="ms-Icon ms-Icon--Calendar me-2 fs-6 my-1"></i>
+                  <span id="agenda" class="collapse navbar-collapse">Agenda</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link link-dark d-flex">
+                  <i class="ms-Icon ms-Icon--Calendar me-2 fs-6 my-1"></i>
+                  <span id="agenda" class="collapse navbar-collapse">Agenda</span>
+                </a>
+              </li>
+            </ul>
+            <hr>
+          </div>        
+    </aside>
+    
+    <main id="main" class="main w-100">
+          <div class="container-fluid">
+            <div class="">
+              <!-- Tabs navs -->
+                <ul class="nav nav-tabs nav-justified mb-3" id="ex1" role="tablist">
+                  <li class="nav-item text-start" role="presentation">
+                    <a
+                      class="nav-link active"
+                      id="ex2-tab-1"
+                      data-mdb-toggle="tab"
+                      href="#ex2-tabs-1"
+                      role="tab"
+                      aria-controls="ex2-tabs-1"
+                      aria-selected="true"
+                      >Sumário</a
+                    >
+                  </li>
+                  <li class="nav-item text-start" role="presentation">
+                    <a
+                      class="nav-link"
+                      id="ex2-tab-2"
+                      data-mdb-toggle="tab"
+                      href="#ex2-tabs-2"
+                      role="tab"
+                      aria-controls="ex2-tabs-2"
+                      aria-selected="false"
+                      >Insights</a
+                    >
+                  </li>
+                  <li class="nav-item text-start" role="presentation">
+                    <a
+                      class="nav-link"
+                      id="ex2-tab-3"
+                      data-mdb-toggle="tab"
+                      href="#ex2-tabs-3"
+                      role="tab"
+                      aria-controls="ex2-tabs-3"
+                      aria-selected="false"
+                      >Another link</a
+                    >
+                  </li>
+                </ul>
+                <!-- Tabs navs -->
+
+                <!-- Tabs content -->
+                <div class="tab-content" id="ex2-content">
+                  <div
+                    class="tab-pane fade show active py-3"
+                    id="ex2-tabs-1"
+                    role="tabpanel"
+                    aria-labelledby="ex2-tab-1"
+                  >
+                    <!-- Tab 1 content -->
+                      <!-- Sumário -->
+                  <div class="card-group">
+                      <div class="card mb-3 mx-4 bg-primary" style="max-width: 18rem;">
+                      <!-- <div class="card-header"></div> -->
+                        <div class="card-body text-white">
+                          <h5 class="card-title"><i class="ms-Icon ms-Icon--EventDate mx-1"></i><span>Agendados para Hoje</span></h5>
+                          <p class="card-text text-center fs-1">0</p>
+                        </div>
+                      </div>
+                      <div class="card mb-3 mx-4 bg-danger" style="max-width: 18rem;">
+                        <!-- <div class="card-header"></div> -->
+                        <div class="card-body text-white">
+                          <h5 class="card-title"><i class="ms-Icon ms-Icon--EventDeclined mx-1"></i>Cancelados</h5>
+                          <p class="card-text text-center fs-1">0</p>
+                        </div>
+                      </div>
+                      <div class="card mb-3 mx-4 bg-warning" style="max-width: 18rem;">
+                        <!-- <div class="card-header"></div> -->
+                        <div class="card-body text-white">
+                          <h5 class="card-title"><i class="ms-Icon ms-Icon--EventDateMissed12 mx-1"></i>Ausentes</h5>
+                          <p class="card-text text-center fs-1">0</p>
+                        </div>
+                      </div>
+                      <div class="card mb-3 mx-4 bg-info" style="max-width: 18rem;">
+                          <!-- <div class="card-header"></div> -->
+                          <div class="card-body text-white">
+                            <h5 class="card-title"><i class="ms-Icon ms-Icon--Calendar mx-1"></i>Total de visitas Mês</h5>
+                            <p class="card-text text-center fs-1">0</p>
+                          </div>
+                      </div>
+                      <div class="card mb-3 mx-4 bg-info" style="max-width: 18rem;">
+                              <!-- <div class="card-header"></div> -->
+                              <div class="card-body text-white">
+                                <h5 class="card-title"><i class="ms-Icon ms-Icon--Calendar mx-1"></i>Total de Visitas Ano</h5>
+                                <p class="card-text text-center fs-1">0</p>
+                              </div>
+                      </div>
+              </div>
+              <div id="" class="card-group">
+                <div class="card mb-3 mx-4 bg-success" style="max-width: 18rem;">
+                    <!-- <div class="card-header"></div> -->
+                    <div class="card-body text-white">
+                      <h5 class="card-title"><i class="ms-Icon ms-Icon--EventInfo mx-1"></i>Necessidade Especial</h5>
+                      <p class="card-text text-center"><strong>0</strong> Registros para visitantes com necesside especial para hoje.</p>
+                    </div>
+                </div>
+
+              </div>
+              <div class="card-group">
+                <div class="card mb-3 mx-4" style="max-width: 28rem;">
+                <!-- <div class="card-header"></div> -->
+                  <div class="card-body text-dark">
+                    <canvas id="myChart" width="100" height="100"></canvas>
+                  </div>
+                </div>
+                <div class="card mb-3 mx-4" style="max-width: 28rem;">
+                  <div class="card-header">Visitantes com necesside especial no ano.</div>
+                    <div class="card-body text-dark">
+                      <canvas id="myChartPie" width="100" height="100"></canvas>
+                    </div>
+                  </div>
+              </div>
+              
+              <!-- Sumário end-->
+                    <!--  -->
+                  </div>
+                  <div
+                    class="tab-pane fade"
+                    id="ex2-tabs-2"
+                    role="tabpanel"
+                    aria-labelledby="ex2-tab-2"
+                  >
+                    Tab 2 content
+                  </div>
+                  <div
+                    class="tab-pane fade"
+                    id="ex2-tabs-3"
+                    role="tabpanel"
+                    aria-labelledby="ex2-tab-3"
+                  >
+                    Tab 3 content
+                  </div>
+                </div>
+                <!-- Tabs content -->
+            </div>
+          </div>
+    </main>
+
+
+
+    <!-- Modal -->
+    <div class="modal top " id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
+      <div class="modal-dialog modal-lg  modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="aboutModalLabel">Sobre</h5>
+            <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+            <p class="text-center">
+              Desenvolvido pelos alunos da <img src="/img/Univesp_logo_png_rgb.png" alt="Logo marca da Universidade Virtual do Estado de São Paulo" width="200px">
+              <p class="text-center">
+              BRUNA DOS SANTOS SAMPAIO <br>
+              DOUGLAS TOFFOLETTO <br>
+              FERNANDA MARIA DIAS DE GOZ <br>
+              MARCELO LAZARO DE OLIVEIRA <br>
+              PAULO SOUZA DANEU <br>
+              VITOR B. R. SILVA <br>
+              VIVIANE BEZERRA CAMPOS
+              </p>
+
+            </p>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+              Fechar
+            </button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal top fade" id="logoutModal" tabindex="-1" aria-labelledby="logouModalLabel" aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
+      <div class="modal-dialog modal-sm  modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="logouModalLabel">Logout</h5>
+            <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">Deseja realmente efetuar logout?</div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+              Não
+            </button>
+            <button type="button" class="btn btn-primary">Sim</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="../js/mdb.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/popper.js"></script>
+    <script type="text/javascript" src="../js/dashboard/scripts.js"></script>
+    <script type="text/javascript" src="../js/chartjs/dist/chart.min.js"></script>
+    <script type="text/javascript" src="../js/dashboard/main.js"></script>
+</body>
+</html>

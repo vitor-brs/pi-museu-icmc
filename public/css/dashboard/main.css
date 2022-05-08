@@ -1,0 +1,36 @@
+#ex2-tab-1:hover{
+    border-left: 0px hidden;
+}
+#ex2-tab-2:hover{
+    border-left: 0px hidden;
+}
+#ex2-tab-3:hover{
+    border-left: 0px hidden;
+}
+#ex2-tab-1{
+    color: black;
+    font: bold;
+}
+#ex2-tabs-1 {
+    border-left: 0px;
+    background-color: rgb(250, 249, 248);
+}
+#ex2-tabs-2 {
+    border-left: 0px;
+    background-color: rgb(250, 249, 248);
+}
+#ex2-tabs-3 {
+    border-left: 0px;
+    background-color: rgb(250, 249, 248);
+}
+
+body{
+    font-family:opensans ;
+}
+@font-face{
+    font-family: opensans;
+    src: url(/css/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf);
+}
+.card{
+    border-radius: 0%;
+}
