@@ -3,7 +3,7 @@ body{
 }
 @font-face{
     font-family: opensans;
-    src: url(/css/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf);
+    src: url(../Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf);
 }
 .card{
     border-radius: 0px;
