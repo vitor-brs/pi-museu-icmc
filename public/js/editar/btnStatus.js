@@ -1,7 +1,7 @@
-let varId
+let getIdBtnStatus
 function clickStatus(idBtn){
     
-    return varId = idBtn.id
+    return getIdBtnStatus = idBtn.id
     
 }
 function changeStatus(params, liStatusList) {
