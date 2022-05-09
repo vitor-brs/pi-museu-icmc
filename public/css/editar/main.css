@@ -14,6 +14,9 @@ body{
 .input-border{
     border: hidden;
 }
+.select-border{
+    border: hidden;
+}
 #ex2-tabs-1 {
     border-left: 0px;
     background-color: rgb(250, 249, 248);
