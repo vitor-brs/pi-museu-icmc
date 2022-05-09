@@ -175,7 +175,7 @@
                       role="tab"
                       aria-controls="ex2-tabs-3"
                       aria-selected="false"
-                      >Another link</a
+                      >Localizar Agenda</a
                     >
                   </li>
                 </ul>
@@ -505,7 +505,160 @@
                     role="tabpanel"
                     aria-labelledby="ex2-tab-3"
                   >
-                    Tab 3 content
+                    
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Pesquisar</h5>
+                          <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                          <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="card-link">Card link</a>
+                          <a href="#" class="card-link">Another link</a> -->
+
+                          <div class="input-group mb-3">
+                            <span class="input-group-text border-0" id="search-addon"><i class="fas fa-search"></i></span>
+                            <input
+                              type="search"
+                              class="form-control rounded"
+                              placeholder="Search"
+                              aria-label="Search"
+                              aria-describedby="search-addon"
+                            />
+                            <button type="button" class="btn btn-primary">Localizar</button>
+                          </div>
+
+                          <table class="table  table-responsive-sm align-middle mb-0 bg-white ">
+                            <thead class="bg-light">
+                              <tr>
+                                <th>Nome</th>
+                                <th>Instituição</th>
+                                <th>Status</th>
+                                <th>N. Especial</th>
+                                <th>Ação</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <div class="d-flex align-items-center">
+                                    <!-- <img
+                                        src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                                        alt=""
+                                        style="width: 45px; height: 45px"
+                                        class="rounded-circle"
+                                        /> -->
+                                        <i class="ms-Icon ms-Icon--Contact fs-2" style="width: 45px; height: 45px"></i>
+                                    <div class="ms-3">
+                                      <p class="fw-bold mb-1">John Doe</p>
+                                      <p class="text-muted mb-0">john.doe@gmail.com</p>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td>
+                                  <p class="fw-normal mb-1">APAE</p>
+                                  <p class="text-muted mb-0">Organização não governamental</p>
+                                </td>
+                                <td>
+                                  <span class="badge badge-success rounded-pill d-inline">Concluído</span>
+                                </td>
+                                <td><i class="ms-Icon ms-Icon--Wheelchair fs-3" data-mdb-toggle="tooltip" data-mdb-placement="bottom" title="Este visitante possui necessidade especial"></i></td>
+                                <td>
+                                  <button type="button" class="btn btn-link btn-sm btn-rounded fw-bold">
+                                    Editar
+                                  </button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <div class="d-flex align-items-center">
+                                    <i class="ms-Icon ms-Icon--Contact fs-2" style="width: 45px; height: 45px"></i>
+                                    <div class="ms-3">
+                                      <p class="fw-bold mb-1">Alex Ray</p>
+                                      <p class="text-muted mb-0">alex.ray@gmail.com</p>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td>
+                                  <p class="fw-normal mb-1">Consultant</p>
+                                  <p class="text-muted mb-0">Empresa Privada</p>
+                                </td>
+                                <td>
+                                  <span class="badge badge-primary rounded-pill d-inline"
+                                        >Confirmado</span
+                                    >
+                                </td>
+                                <td></td>
+                                <td>
+                                  <button
+                                          type="button"
+                                          class="btn btn-link btn-rounded btn-sm fw-bold"
+                                          data-mdb-ripple-color="dark"
+                                          >
+                                    Editar
+                                  </button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <div class="d-flex align-items-center">
+                                    <i class="ms-Icon ms-Icon--Contact fs-2" style="width: 45px; height: 45px"></i>
+                                    <div class="ms-3">
+                                      <p class="fw-bold mb-1">Kate Hunington</p>
+                                      <p class="text-muted mb-0">kate.hunington@gmail.com</p>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td>
+                                  <p class="fw-normal mb-1">EMEF São Carlos</p>
+                                  <p class="text-muted mb-0">Instituição pública de ensino fundamental</p>
+                                </td>
+                                <td>
+                                  <span class="badge badge-secondary rounded-pill d-inline">Agendado</span>
+                                </td>
+                                <td><i class="ms-Icon ms-Icon--Wheelchair fs-3" data-mdb-toggle="tooltip" data-mdb-placement="bottom" title="Este visitante possui necessidade especial"></i></td>
+                                <td>
+                                  <button
+                                          type="button"
+                                          class="btn btn-link btn-rounded btn-sm fw-bold"
+                                          data-mdb-ripple-color="dark"
+                                          >
+                                    Editar
+                                  </button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <div class="d-flex align-items-center">
+                                    <i class="ms-Icon ms-Icon--Contact fs-2" style="width: 45px; height: 45px"></i>
+                                    <div class="ms-3">
+                                      <p class="fw-bold mb-1">Kate Hunington</p>
+                                      <p class="text-muted mb-0">kate.hunington@gmail.com</p>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td>
+                                  <p class="fw-normal mb-1">Igreja de São Carlos</p>
+                                  <p class="text-muted mb-0">Instituição Religiosa</p>
+                                </td>
+                                <td>
+                                  <span class="badge badge-danger rounded-pill d-inline">Cancelado</span>
+                                </td>
+                                <td></td>
+                                <td>
+                                  <button
+                                          type="button"
+                                          class="btn btn-link btn-rounded btn-sm fw-bold"
+                                          data-mdb-ripple-color="dark"
+                                          >
+                                    Editar
+                                  </button>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+                        </div>
+                      </div>
+
                   </div>
                 </div>
                 <!-- Tabs content -->
