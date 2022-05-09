@@ -87,10 +87,7 @@ nav {
     font-family: anton;
     src: url(./Anton/Anton-Regular.ttf);
 }
-@font-face {
-    font-family: opensans;
-    src: url(./Open_Sans/static/OpenSans/OpenSans-Regular.ttf);
-}
+
 @font-face{
     font-family: opensans-light;
     src: url(/css/Open_Sans/static/OpenSans/OpenSans-Light.ttf);
