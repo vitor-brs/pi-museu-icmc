@@ -313,7 +313,6 @@
                       <div class="card-body">
                         <h5 class="card-title text-center"><strong>Agenda</strong></h5>
                       
-                        <form action="">
                           <table class="table align-middle mb-0 bg-white">
                             <thead class="bg-light">
                               <tr>
@@ -326,39 +325,42 @@
                             </thead>
                             <tbody>
                               <tr>
-                                <td>
-                                      <input class="input-border mb-2" type="date" placeholder="">
-                                </td>
-                                <td>
-                                  <input class="input-border" type="number" placeholder="0">
-                                </td>
-                                <td>
-                                  
-                                  <div class="dropdown">
-                                    <a
-                                      class="badge badge-success rounded-pill d-inline dropdown-toggle"
-                                      type="button"
-                                      id="dropdownMenuButton"
-                                      data-mdb-toggle="dropdown"
-                                      aria-expanded="false"
-                                    >
-                                      Agendado
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                      <li><a class="dropdown-item" href="#">Agendado</a></li>
-                                      <li><a class="dropdown-item" href="#">Confirmado</a></li>
-                                      <li><a class="dropdown-item" href="#">Concluído</a></li>
-                                      <li><a class="dropdown-item" href="#">Ausente</a></li>
-                                      <li><a class="dropdown-item" href="#">Cancelado</a></li>
-                                    </ul>
-                                  </div>
-                                </td>
-                                <td><textarea name="" id="" cols="25" rows="2"></textarea></td>
-                                <td>
-                                  <button type="button" class="btn btn-link btn-sm btn-rounded fw-bold">
-                                    Atualizar
-                                  </button>
-                                </td>
+                                <form action="">
+                                  <td>
+                                        <input class="input-border mb-2" type="date" placeholder="">
+                                  </td>
+                                  <td>
+                                    <input class="input-border" type="number" placeholder="0">
+                                  </td>
+                                  <td>
+                                    
+                                    <div class="dropdown">
+                                      <a
+                                        class="badge badge-secondary rounded-pill d-inline dropdown-toggle"
+                                        type="button"
+                                        id="statusDropdownMenuButton1"
+                                        data-mdb-toggle="dropdown"
+                                        aria-expanded="false"
+                                        onclick="clickStatus(this)"
+                                      >
+                                        Agendado
+                                      </a>
+                                      <ul class="dropdown-menu" aria-labelledby="statusDropdownMenuButton">
+                                        <li value="Agendado" onclick="changeStatus(varId, 'Agendado')"><a id="statusAgendado" class="dropdown-item" href="#">Agendado</a></li>
+                                        <li value="Confirmado" onclick="changeStatus(varId, 'Confirmado')"><a id="statusConfirmado" class="dropdown-item" href="#">Confirmado</a></li>
+                                        <li value="Concluído" onclick="changeStatus(varId, 'Concluído')"><a id="statusConcluido" class="dropdown-item" href="#">Concluído</a></li>
+                                        <li value="Faltou" onclick="changeStatus(varId, 'Faltou')"><a id="statusAusente" class="dropdown-item" href="#">Faltou</a></li>
+                                        <li value="Cancelado" onclick="changeStatus(varId, 'Cancelado')"><a id="statusCancelado" class="dropdown-item" href="#">Cancelado</a></li>
+                                      </ul>
+                                    </div>
+                                  </td>
+                                  <td><textarea name="" id="" cols="25" rows="2"></textarea></td>
+                                  <td>
+                                    <button type="button" class="btn btn-link btn-sm btn-rounded fw-bold">
+                                      Atualizar
+                                    </button>
+                                  </td>
+                                </form>
                               </tr>
                               <tr>
                                 <td>
@@ -372,18 +374,19 @@
                                       <a
                                         class="badge badge-primary rounded-pill d-inline dropdown-toggle"
                                         type="button"
-                                        id="dropdownMenuButton"
+                                        id="dropdownMenuButton2"
                                         data-mdb-toggle="dropdown"
                                         aria-expanded="false"
+                                        onclick="clickStatus(this)"
                                       >
                                         Confirmado
                                       </a>
                                       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <li><a class="dropdown-item" href="#">Agendado</a></li>
-                                        <li><a class="dropdown-item" href="#">Confirmado</a></li>
-                                        <li><a class="dropdown-item" href="#">Concluído</a></li>
-                                        <li><a class="dropdown-item" href="#">Ausente</a></li>
-                                        <li><a class="dropdown-item" href="#">Cancelado</a></li>
+                                        <li value="Agendado" onclick="changeStatus(varId, 'Agendado')"><a id="statusAgendado" class="dropdown-item" href="#">Agendado</a></li>
+                                        <li value="Confirmado" onclick="changeStatus(varId, 'Confirmado')"><a id="statusConfirmado" class="dropdown-item" href="#">Confirmado</a></li>
+                                        <li value="Concluído" onclick="changeStatus(varId, 'Concluído')"><a id="statusConcluido" class="dropdown-item" href="#">Concluído</a></li>
+                                        <li value="Faltou" onclick="changeStatus(varId, 'Faltou')"><a id="statusAusente" class="dropdown-item" href="#">Faltou</a></li>
+                                        <li value="Cancelado" onclick="changeStatus(varId, 'Cancelado')"><a id="statusCancelado" class="dropdown-item" href="#">Cancelado</a></li>
                                       </ul>
                                     </div>
                                 </td>
@@ -410,18 +413,19 @@
                                     <a
                                       class="badge badge-warning rounded-pill d-inline dropdown-toggle"
                                       type="button"
-                                      id="dropdownMenuButton"
+                                      id="dropdownMenuButton3"
                                       data-mdb-toggle="dropdown"
                                       aria-expanded="false"
+                                      onclick="clickStatus(this)"
                                     >
-                                      Ausente
+                                      Faltou
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                      <li><a class="dropdown-item" href="#">Agendado</a></li>
-                                      <li><a class="dropdown-item" href="#">Confirmado</a></li>
-                                      <li><a class="dropdown-item" href="#">Concluído</a></li>
-                                      <li><a class="dropdown-item" href="#">Ausente</a></li>
-                                      <li><a class="dropdown-item" href="#">Cancelado</a></li>
+                                        <li value="Agendado" onclick="changeStatus(varId, 'Agendado')"><a id="statusAgendado" class="dropdown-item" href="#">Agendado</a></li>
+                                        <li value="Confirmado" onclick="changeStatus(varId, 'Confirmado')"><a id="statusConfirmado" class="dropdown-item" href="#">Confirmado</a></li>
+                                        <li value="Concluído" onclick="changeStatus(varId, 'Concluído')"><a id="statusConcluido" class="dropdown-item" href="#">Concluído</a></li>
+                                        <li value="Faltou" onclick="changeStatus(varId, 'Faltou')"><a id="statusAusente" class="dropdown-item" href="#">Faltou</a></li>
+                                        <li value="Cancelado" onclick="changeStatus(varId, 'Cancelado')"><a id="statusCancelado" class="dropdown-item" href="#">Cancelado</a></li>
                                     </ul>
                                   </div>
                                 </td>
@@ -441,7 +445,6 @@
                           <!--  -->
                          
                           
-                          </form>
                           
                           
                         </div>
@@ -551,5 +554,6 @@
     <script type="text/javascript" src="../js/editar/scripts.js"></script>
     <script type="text/javascript" src="../js/chartjs/dist/chart.min.js"></script>
     <script type="text/javascript" src="../js/editar/main.js"></script>
+    <script type="text/javascript" src="../js/editar/btnStatus.js"></script>
 </body>
 </html>
