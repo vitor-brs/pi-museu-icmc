@@ -179,7 +179,7 @@
                       role="tab"
                       aria-controls="ex2-tabs-3"
                       aria-selected="false"
-                      >Another link</a
+                      >Observações</a
                     >
                   </li>
                 </ul>
@@ -525,7 +525,49 @@
                     role="tabpanel"
                     aria-labelledby="ex2-tab-3"
                   >
-                    Tab 3 content
+                    
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title"><i class="ms-Icon ms-Icon--Insights"></i> Observações</h5>
+                      <p class="card-text">Entre com observações adicionais sobre o visitante.</p>
+                      <div class="form-outline mb-3">
+                        <textarea class="form-control" id="textAreaExample" rows="4"></textarea>
+                        <label class="form-label" for="textAreaExample">Mensagem</label>
+                      </div>
+                      <div><button type="button" class="btn btn-primary">Adicionar</button></div>
+                      
+                      <table class="table align-middle mb-0 bg-white">
+                        <thead class="bg-light">
+                          <tr>
+                            <th>Mensagem</th>
+                            <th>Ações</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <div class="form-outline mb-3">
+                                <textarea class="form-control" id="textAreaExample" rows="4"></textarea>
+                                <label class="form-label" for="textAreaExample">Mensagem</label>
+                              </div>
+                            </td>                            
+                            <td>
+                              <button type="button" class="btn btn-link btn-sm btn-rounded btn-primary btnEditarObervacoes" data-mdb-toggle="tooltip" data-mdb-placement="bottom" title="Atualizar observações">
+                                <i class="ms-Icon ms-Icon--Refresh fs-6"></i>
+                              </button>
+                              <button type="button" class="btn btn-link btn-sm btn-rounded btn-danger btnExcluirObervacoes" data-mdb-toggle="tooltip" data-mdb-placement="bottom" title="Excluir observações">
+                                <i class="ms-Icon ms-Icon--Delete fs-6"></i>
+                              </button>
+                            </td>                            
+                          </tr>
+                          
+                          
+                        </tbody>
+                      </table>
+
+                    </div>
+                  </div>
+
                   </div>
                 </div>
                 <!-- Tabs content -->

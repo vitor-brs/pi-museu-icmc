@@ -49,3 +49,11 @@ body{
 .btnHover:hover{
     background-color: rgb(94, 194, 107);
 }
+.btnEditarObervacoes:hover{
+    background-color: rgb(67, 41, 216);
+    color: white;
+}
+.btnExcluirObervacoes:hover{
+    background-color:rgb(197, 53, 53);
+    color: white;
+}
