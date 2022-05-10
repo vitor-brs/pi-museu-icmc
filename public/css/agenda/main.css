@@ -16,7 +16,11 @@
     background-color: rgb(250, 249, 248);
 }
 #ex2-tabs-2 {
-    /* border-left: 0px; */
+    border-left: 0px;
+    background-color: rgb(250, 249, 248);
+}
+#ex2-tabs-3 {
+    border-left: 0px;
     background-color: rgb(250, 249, 248);
 }
 /* .card-header{
