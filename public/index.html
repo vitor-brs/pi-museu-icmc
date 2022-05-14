@@ -18,6 +18,8 @@
 
     <!-- MDB -->
     <link rel="stylesheet" href="css/mdb.min.css" />
+    <!-- <link rel="stylesheet" href="css/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" />
+    <link rel="stylesheet/less" type="text/css" href="css/bootstrap-datepicker/less/datepicker.less" /> -->
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body class="d-flex flex-column min-vh-100">
@@ -191,17 +193,10 @@
               <input class="form-control mb-2" type="number" id="initial-visitor" required/>
               <div id="segunda-visita">
               </div>
+              <div id="terceira-visita">
+              </div>
               <button id="btn-add-date" type="button" class="btn btn-outline-info" data-mdb-ripple-color="dark">Adicionar outra data para visita</button>
               <button id="btn-remove-date" type="button" class="btn btn-outline-danger" data-mdb-ripple-color="dark" hidden>Excluir data</button>
-              <!-- Segunda data -->
-              <div id="data-segunda-visita">
-              </div>
-              <!-- Segunda data -->
-              <!--  -->
-              <div id="data-terceira-visita">
-              </div>
-              <!--  -->
-
            </section>
           <!-- Dados periodo visitação -->
 
@@ -283,11 +278,11 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Erro</h5>
+        <h5 class="modal-title">Aviso</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" data-mdb-toggle="modal"></button>
       </div>
       <div class="modal-body">
-        <p>O museu não atende aos finais de semana. Escolha outra data.</p>
+        <p>O museu atende somente de segunda à sexta, das 8h00 às 18h00. Escolha outra data.</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-warning" data-mdb-toggle="modal" data-bs-dismiss="modal">Fechar</button>
@@ -296,6 +291,23 @@
   </div>
 </div>
 <!-- Modal Erro data -->
+<div id="modal-error-day" class="modal fade" tabindex="-1" role="Caixa de dialogo com mensagem de data inválida.">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Erro</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" data-mdb-toggle="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Data inválida!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-mdb-toggle="modal" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Modal Erro email -->
 <div id="modal-invalid-email" class="modal fade" tabindex="-1" role="Caixa de dialogo com mensagem de email inválido.">
   <div class="modal-dialog">
@@ -489,9 +501,10 @@
     <script type="text/javascript"></script>
 
     <script src="js/jquery.min.js"></script>
+    <!-- <script src="js/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script> -->
     <script src="js/script.js"></script>
     <script src="js/popper.js"></script>
-    <script src="js/main.js"></script>
+
   
   </body>
 </html>

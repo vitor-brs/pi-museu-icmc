@@ -170,18 +170,6 @@
                       >Dados Agendamento</a
                     >
                   </li>
-                  <li class="nav-item text-start" role="presentation">
-                    <a
-                      class="nav-link"
-                      id="ex2-tab-3"
-                      data-mdb-toggle="tab"
-                      href="#ex2-tabs-3"
-                      role="tab"
-                      aria-controls="ex2-tabs-3"
-                      aria-selected="false"
-                      >Observações</a
-                    >
-                  </li>
                 </ul>
                 <!-- Tabs navs -->
 
@@ -327,10 +315,11 @@
                       <div class="card-body">
                         <h5 class="card-title"><i class="ms-Icon ms-Icon--EventDate rounded-pill bg-white"></i> Visualização do Agendamento</h5>
                       
-                          <table class="table align-middle mb-0 bg-white">
+                          <table class="table table-responsive-sm align-middle mb-0 bg-white">
                             <thead class="bg-light">
                               <tr>
                                 <th>Data</th>
+                                <th>Hora</th>
                                 <th>N. Visitantes</th>
                                 <th>Status</th>
                                 <th>N. Especial</th>
@@ -341,7 +330,10 @@
                               <tr>
                                 <form action="">
                                   <td>
-                                        <input class="input-border mb-2" type="date" placeholder="">
+                                    <input class="input-border mb-2" type="date" placeholder="">
+                                  </td>
+                                  <td>
+                                    <input class="input-border mb-2" type="time" placeholder="">
                                   </td>
                                   <td>
                                     <input class="input-border" type="number" placeholder="0">
@@ -397,6 +389,9 @@
                                 <form action="">
                                 <td>
                                       <input class="input-border mb-2" type="date" placeholder="">
+                                </td>
+                                <td>
+                                  <input class="input-border mb-2" type="time" placeholder="">
                                 </td>
                                 <td>
                                   <input class="input-border" type="number" placeholder="0">
@@ -456,6 +451,9 @@
                                       <input class="input-border mb-2" type="date" placeholder="">
                                 </td>
                                 <td>
+                                  <input class="input-border mb-2" type="time" placeholder="">
+                                </td>
+                                <td>
                                   <input class="input-border" type="number" placeholder="0">
                                 </td>
                                 <td>
@@ -470,12 +468,26 @@
                                     >
                                       Faltou
                                     </a>
+                                      <a href=""
+                                        data-mdb-toggle="modal" 
+                                        data-mdb-target="#motivoModal"
+                                      >
+                                        <i class="ms-Icon ms-Icon--CommentActive text-danger" data-mdb-toggle="tooltip" data-mdb-placement="bottom" title="Motivo do cancelamento ou falta"></i>
+                                      </a>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                         <li value="Agendado" onclick="changeStatus(getIdBtnStatus, 'Agendado')"><a id="statusAgendado" class="dropdown-item" href="#">Agendado</a></li>
                                         <li value="Confirmado" onclick="changeStatus(getIdBtnStatus, 'Confirmado')"><a id="statusConfirmado" class="dropdown-item" href="#">Confirmado</a></li>
                                         <li value="Concluído" onclick="changeStatus(getIdBtnStatus, 'Concluído')"><a id="statusConcluido" class="dropdown-item" href="#">Concluído</a></li>
-                                        <li value="Faltou" onclick="changeStatus(getIdBtnStatus, 'Faltou')"><a id="statusAusente" class="dropdown-item" href="#">Faltou</a></li>
-                                        <li value="Cancelado" onclick="changeStatus(getIdBtnStatus, 'Cancelado')"><a id="statusCancelado" class="dropdown-item" href="#">Cancelado</a></li>
+                                        <li value="Faltou" onclick="changeStatus(getIdBtnStatus, 'Faltou')"><a id="statusAusente" class="dropdown-item" href="#"
+                                          data-mdb-toggle="modal" 
+                                          data-mdb-target="#motivoModal"
+                                          >Faltou</a></li>
+                                        <li value="Cancelado" onclick="changeStatus(getIdBtnStatus, 'Cancelado')"><a id="statusCancelado" class="dropdown-item" href="#"
+                                          data-mdb-toggle="modal" 
+                                          data-mdb-target="#motivoModal"
+                                          >Cancelado</a>
+                                          
+                                        </li>
                                     </ul>
                                   </div>
                                 </td>
@@ -519,56 +531,7 @@
                      
                     <!-- tab 2 -->
                   </div> 
-                  <div
-                    class="tab-pane fade"
-                    id="ex2-tabs-3"
-                    role="tabpanel"
-                    aria-labelledby="ex2-tab-3"
-                  >
-                    
-                  <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title"><i class="ms-Icon ms-Icon--Insights"></i> Observações</h5>
-                      <p class="card-text">Entre com observações adicionais sobre o visitante.</p>
-                      <div class="form-outline mb-3">
-                        <textarea class="form-control" id="textAreaExample" rows="4"></textarea>
-                        <label class="form-label" for="textAreaExample">Mensagem</label>
-                      </div>
-                      <div><button type="button" class="btn btn-primary mb-1">Adicionar</button></div>
-                      
-                      <table class="table align-middle mb-0 bg-white">
-                        <thead class="bg-light">
-                          <tr>
-                            <th>Mensagem</th>
-                            <th>Ações</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>
-                              <div class="form-outline mb-3">
-                                <textarea class="form-control" id="textAreaExample" rows="4"></textarea>
-                                <label class="form-label" for="textAreaExample">Mensagem</label>
-                              </div>
-                            </td>                            
-                            <td>
-                              <button type="button" class="btn btn-link btn-sm btn-rounded btn-primary btnEditarObervacoes" data-mdb-toggle="tooltip" data-mdb-placement="bottom" title="Atualizar observações">
-                                <i class="ms-Icon ms-Icon--Refresh fs-6"></i>
-                              </button>
-                              <button type="button" class="btn btn-link btn-sm btn-rounded btn-danger btnExcluirObervacoes" data-mdb-toggle="tooltip" data-mdb-placement="bottom" title="Excluir observações">
-                                <i class="ms-Icon ms-Icon--Delete fs-6"></i>
-                              </button>
-                            </td>                            
-                          </tr>
-                          
-                          
-                        </tbody>
-                      </table>
 
-                    </div>
-                  </div>
-
-                  </div>
                 </div>
                 <!-- Tabs content -->
                   <!-- FDSFDKSAKFSDKFADKSFKSD -->
@@ -577,7 +540,7 @@
             
 
       
-      <!-- Sumário end-->
+     
             </div>
           </div>
     </main>
@@ -700,6 +663,30 @@
               </div>
               <div class="modal-body text-center"><i class="fa-solid fa-circle-check text-success fs-3"></i> Registro atualizado com sucesso!</div>
               <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-mdb-dismiss="modal">
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal top fade" id="motivoModal" tabindex="-1" aria-labelledby="successeModalLabel" aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
+          <div class="modal-dialog modal-md  modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="motivoModalLabel">Registrar Motivo</h5>
+                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body text-center">Informe o motivo do cancelamento ou falta
+                <div><textarea name="" id="" cols="50" rows="5"></textarea></div>
+              </div>
+              
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+                  CANCELAR
+                </button>
                 <button type="button" class="btn btn-success" data-mdb-dismiss="modal">
                   OK
                 </button>

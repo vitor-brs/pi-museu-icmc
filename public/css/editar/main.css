@@ -33,6 +33,10 @@ body{
     border-left: 0px;
     background-color: rgb(250, 249, 248);
 }
+#ex2-tabs-3 {
+    border-left: 0px;
+    background-color: rgb(250, 249, 248);
+}
 #ex2-tab-1:hover{
     border-left: 0px hidden;
 }

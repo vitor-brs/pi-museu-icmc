@@ -91,20 +91,6 @@ checkNecessidadeEspecial.addEventListener('click', (ev) => {
         textNecessidadeEspecial.focus()
 });
 
-const dataVisita = document.getElementById('initial-date')
-const addHora = document.getElementById('horario-visita')
-dataVisita.addEventListener('change',(ev) => {
-    const diaDaSemana = new Date(dataVisita.value)
-    const dia = diaDaSemana.getDay()
-    if(dia == 6 || dia == 5){
-        $("#modal-invalid-day").modal('show')
-        dataVisita.value = ""
-        addHora.innerHTML = ''
-    }else{
-        addHora.innerHTML = '<span>Escolha um horário</span>'
-    }
-});
-
 function validacaoEmail(field) {
     usuario = field.value.substring(0, field.value.indexOf("@"));
     dominio = field.value.substring(field.value.indexOf("@")+ 1, field.value.length);
@@ -136,21 +122,36 @@ inputEmail.addEventListener('blur', (ev)=>{
     }
 });
 
-const addDate = document.getElementById('btn-add-date')
-const removeDate = document.getElementById('btn-remove-date')
+const btnAddDate = document.getElementById('btn-add-date')
+const btnRemoveDate = document.getElementById('btn-remove-date')
 const segundaVisita = document.getElementById('segunda-visita')
+const terceiraVisita = document.getElementById('terceira-visita')
 
-const strNecessidadeEspecial = '<section class="mb-3"><h5 class="fonts-custom fs-5">Dados da próxima visita</h5><div class="form-check form-switch"><input class="form-check-input" type="checkbox" role="switch" id="flexSwitch-especial" /><label class="form-check-label" for="flexSwitch-especial">Possui necessidade especial? </label></div><textarea id="tipo-necessidade" class="form-control" aria-label="With textarea" placeholder="Indique qual" disabled required></textarea></section>';
-
-addDate.addEventListener('click', (ev)  =>{
-        segundaVisita.innerHTML = strNecessidadeEspecial + '<span>Escolha uma data</span><input class="form-control" type="date" id="initial-date" required/><span>Informe o número de visitantes</span><input class="form-control mb-2" type="number" id="initial-visitor" required/>';
-        removeDate.toggleAttribute('hidden');
-        addDate.toggleAttribute('hidden');
+let numeroVisita = 0;
+btnAddDate.addEventListener('click', (ev)  =>{
+        numeroVisita++;
+        if (numeroVisita == 1) {
+            segundaVisita.innerHTML = addVisita('2', 'Dados da segunda visita');
+            btnRemoveDate.toggleAttribute('hidden');
+        }
+        if (numeroVisita == 2) {
+            terceiraVisita.innerHTML = addVisita('3', 'Dados da última visita');
+            btnAddDate.toggleAttribute('hidden');
+        }
+        
 });
-removeDate.addEventListener('click', (ev) => {
-    segundaVisita.innerHTML = "";
-    removeDate.toggleAttribute('hidden');
-    addDate.toggleAttribute('hidden');
+btnRemoveDate.addEventListener('click', (ev) => {
+    
+    if (numeroVisita == 1) {
+        segundaVisita.innerHTML = "";
+        btnRemoveDate.toggleAttribute('hidden');
+        numeroVisita--;
+    }
+    if (numeroVisita == 2) {
+            terceiraVisita.innerHTML = "";
+            btnAddDate.toggleAttribute('hidden');
+            numeroVisita--;
+    }
 });
 
 const isValidPhone = (phone) => {
@@ -166,3 +167,41 @@ phonenumberTag.addEventListener('blur',(ev)=>{
         phonenumberTag.value = ""
     }
 });
+
+function addVisita(visita, texto) {
+    const addHeaderVisita = '<section class="mb-3"><h5 class="fonts-custom fs-5">'+ texto +'</h5>'
+    const addNecessidadeEspecial = '<div class="form-check form-switch"><input class="form-check-input" type="checkbox" role="switch" id="flexSwitch-especial'+ visita +'" onclick=" onNecessidadeEspecial(' + visita + ') "/><label class="form-check-label" for="flexSwitch-especial">Possui necessidade especial? </label></div><textarea id="tipo-necessidade'+ visita +'" class="form-control" aria-label="With textarea" placeholder="Indique qual" disabled required></textarea>'
+    const addDataVisita = '<span>Escolha uma data</span><input class="form-control" type="date" onchange="validaData(' + visita +')" id="initial-date' + visita + '" required/><span>Informe o número de visitantes</span><input class="form-control mb-2" type="number" id="initial-visitor" required/> </section>'
+
+    return addHeaderVisita + addNecessidadeEspecial + addDataVisita
+}
+function onNecessidadeEspecial(params) {
+    // const checkNecessidadeEspecial = document.getElementById('flexSwitch-especial' + params)
+        const textareaNecessidadeEspecial = document.getElementById('tipo-necessidade' + params)
+        textareaNecessidadeEspecial.toggleAttribute('disabled')
+        textareaNecessidadeEspecial.value = ''
+        textareaNecessidadeEspecial.focus()
+}
+
+
+const dataVisita1 = document.getElementById('initial-date')
+const todayDate = new Date();
+// let day = todayDate.getDate();
+dataVisita1.addEventListener('change',(ev) => {
+    validaData('')
+});
+
+function validaData(params) {
+    const dataVisita = document.getElementById('initial-date'+params)
+    const diaDaSemana = new Date('"'+ dataVisita.value +'"')
+    const dia = diaDaSemana.getDay()
+    if(dia == 6 || dia == 0){
+        $("#modal-invalid-day").modal('show')
+        dataVisita.value = ""
+    }
+
+    if((diaDaSemana < todayDate) && (dia != 6 || dia != 5)){
+        $("#modal-error-day").modal('show')
+        dataVisita.value = ""
+    }
+}
