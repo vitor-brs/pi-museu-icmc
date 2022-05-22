@@ -35,14 +35,7 @@
 body{
     font-family: opensans;
 }
-@font-face {
-    font-family: montserrat;
-    src: url(./Montserrat/Montserrat-VariableFont_wght.ttf);
-}
-@font-face {
-    font-family: anton;
-    src: url(./Anton/Anton-Regular.ttf);
-}
+
 @font-face {
     font-family: opensans;
     src: url(./Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf);
@@ -51,18 +44,7 @@ body{
     font-family: opensans-light;
     src: url(/css/Open_Sans/static/OpenSans/OpenSans-Light.ttf);
 }
-@font-face {
-    font-family: teko;
-    src: url(./Teko/Teko-SemiBold.ttf);
-}
-@font-face {
-    font-family: teko_regular;
-    src: url(./Teko/Teko-Regular.ttf);
-}
-@font-face {
-    font-family: IBM;
-    src: url(./IBM_Plex_Sans_Thai_Looped/IBMPlexSansThaiLooped-Regular.ttf);
-}
+
 .input-border-color {
 
  color: rgb(185, 200, 227);
@@ -92,38 +74,48 @@ margin-bottom: 5px;
     margin-bottom: 15px;
     padding: 0px 0px 0px 0px;
 }
-.calendario {
-    width: 25%;
-}
+
 .negrito {
     font: bold;
 }
+#alunos-top{
+    font-size: 85%;
+}
 @media screen and (max-width:1220px) {
-    .calendario {width: 30%;}
+
+    #alunos-footer{ visibility: hidden;}
   }
   @media screen and (max-width:1020px) {
-    .calendario {width: 50%;}
+
+    #alunos-footer{ visibility: hidden;}
   }
   @media screen and (max-width:920px) {
-    .calendario {width: 50%;}
+
+    #alunos-footer{ visibility: hidden;}
   }
-  @media screen and (max-width:820px) {
-    .calendario {width: 50%;}
+  @media screen and (min-width:820px) {
+
     .secao { padding: auto;}
+    #alunos-footer{ visibility: hidden;}
   }
 @media screen and (max-width:720px) {
-    .calendario {width: 100%;}
+
     .secao { padding: 10px;}
+    #alunos-top{ visibility: hidden;}
+    #alunos-footer{ visibility: visible;}
   }
   
   @media screen and (max-width: 420px) {
-    .calendario {width: 100%;}
-    .secao { padding: 10px;}
 
+    .secao { padding: 10px;}
+    #alunos-top{ visibility: hidden;}
+    #alunos-footer{ visibility: visible;}
   }
   
   @media screen and (max-width: 290px) {
-    .calendario {width: 100%;}
+
     .secao { padding: 10px;}
+    #alunos-top{ visibility: hidden;}
+    #alunos-footer{ visibility: visible;}
   }
   

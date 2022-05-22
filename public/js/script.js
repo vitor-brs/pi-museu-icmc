@@ -2,7 +2,7 @@ const addOrg = document.getElementById('group-select')
 const othersOrg = document.getElementById('others-org')
 
 addOrg.addEventListener('change', (ev) => {
-    const tagValue = '<input id="otherOrg" class="form-control mb-2" type="text" placeholder="Informe o tipo da sua organização" required>'
+    const tagValue = '<input id="otherOrg" class="form-control mb-2" type="text" aria-label="Outro tipo de organização" placeholder="Informe o tipo da sua organização" required>'
     const textOthersOrg = document.getElementById('otherOrg');
     if (typeof(textOthersOrg) != 'undefined' && textOthersOrg != null){
         addOrg.focus()
@@ -170,8 +170,8 @@ phonenumberTag.addEventListener('blur',(ev)=>{
 
 function addVisita(visita, texto) {
     const addHeaderVisita = '<section class="mb-3"><h5 class="fonts-custom fs-5">'+ texto +'</h5>'
-    const addNecessidadeEspecial = '<div class="form-check form-switch"><input class="form-check-input" type="checkbox" role="switch" id="flexSwitch-especial'+ visita +'" onclick=" onNecessidadeEspecial(' + visita + ') "/><label class="form-check-label" for="flexSwitch-especial">Possui necessidade especial? </label></div><textarea id="tipo-necessidade'+ visita +'" class="form-control" aria-label="With textarea" placeholder="Indique qual" disabled required></textarea>'
-    const addDataVisita = '<span>Escolha uma data</span><input class="form-control" type="date" onchange="validaData(' + visita +')" id="initial-date' + visita + '" required/><span>Informe o número de visitantes</span><input class="form-control mb-2" type="number" id="initial-visitor" required/> </section>'
+    const addNecessidadeEspecial = '<div class="form-check form-switch"><input class="form-check-input" type="checkbox" role="switch" id="flexSwitch-especial'+ visita +'" onclick=" onNecessidadeEspecial(' + visita + ') "/><label class="form-check-label" for="flexSwitch-especial'+ visita +'">Possui necessidade especial? </label></div><textarea id="tipo-necessidade'+ visita +'" class="form-control" aria-label="Indique qual sua necessidade especial" placeholder="Indique qual" disabled required></textarea>'
+    const addDataVisita = '<span>Escolha uma data</span><input class="form-control" type="date" onchange="validaData(' + visita +')" id="initial-date' + visita + '" required/><span>Informe o número de visitantes</span><input class="form-control mb-2" type="number" id="initial-visitor'+ visita +'" required/> </section>'
 
     return addHeaderVisita + addNecessidadeEspecial + addDataVisita
 }

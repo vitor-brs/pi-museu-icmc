@@ -1,0 +1,105 @@
+.nav-bar {
+    background-color: rgb(0, 19, 51);
+    border-bottom: rgb(229, 229, 229) 2px solid;
+}
+
+.li-active {
+    background-color: white;
+}
+
+.sidebarMenuExpand{
+    background-color: rgb(240, 239, 240);
+    height: 100%; 
+    width: 55px; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0;
+    left: 0;
+    overflow-x: hidden; 
+    padding: 60px 5px 0px 5px;
+    transition: 0.5s; 
+    border-right: rgb(229, 229, 229) 2px solid;
+}
+.sidebarMenuExpandTrue{
+
+    width: 280px; 
+
+}
+
+.nav-item{
+    margin: 0px 0px 0px 0px;
+    width: 100%;
+}
+.nav-link{
+    padding: 0px 10px 0px 10px;
+    margin: 2.5px 0px 2.5px 0px;
+    border-left: rgb(239, 238, 238) 3px solid;
+}
+.active{
+    border-left: rgb(25, 112, 255) 3px solid;
+}
+.nav-link:hover{
+    background-color: white;
+    border-left: rgb(25, 112, 255) 3px solid;
+}
+
+.main {
+    transition: margin-left 0.5s;
+    margin-left: 0px;
+    padding: 50px 0px 0px 60px;
+}
+
+.visible {
+  visibility: visible !important;
+}
+.invisible {
+  visibility: hidden !important;
+}
+@media screen and (min-width: 421px) {
+    .sidebarMenuExpand {width: 55px;}
+}
+@media screen and (max-width: 420px) and (max-height: 920px){
+    .sidebarMenuExpand {width: 0px;padding: 60px 0px 0px 0px;}
+    #main{margin-left: 0px; padding: 60px 0px 0px 0px;}
+}
+  @media screen and (max-width: 320px) {
+    .sidebarMenuExpand {width: 0px;padding: 60px 0px 0px 0px;}
+    #main{margin-left: 0px; padding: 60px 0px 0px 0px;}
+  }
+  
+  @media only screen and (max-width: 290px) {
+    .sidebarMenuExpand {width: 0px;padding: 60px 0px 0px 0px;}
+    #main{margin-left: 0px; padding: 60px 0px 0px 0px;}
+  }
+  .fonts-custom{
+    font-family: 'Roboto', sans-serif;
+}
+.fonts-custom-2{
+    font-family: IBM, teko_regular, opensans, Helvetica Neue, Segoe UI,Roboto,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    
+}
+@font-face {
+    font-family: montserrat;
+    src: url(./Montserrat/Montserrat-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: anton;
+    src: url(./Anton/Anton-Regular.ttf);
+}
+
+@font-face{
+    font-family: opensans-light;
+    src: url(/css/Open_Sans/static/OpenSans/OpenSans-Light.ttf);
+}
+@font-face {
+    font-family: teko;
+    src: url(./Teko/Teko-SemiBold.ttf);
+}
+@font-face {
+    font-family: teko_regular;
+    src: url(./Teko/Teko-Regular.ttf);
+}
+@font-face {
+    font-family: IBM;
+    src: url(./IBM_Plex_Sans_Thai_Looped/IBMPlexSansThaiLooped-Regular.ttf);
+}

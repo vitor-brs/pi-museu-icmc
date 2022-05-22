@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios</title>
+    
+    <link rel="icon" href="../img/museu-favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/mdb.min.css" />
+    <link rel="stylesheet" href="../css/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/fabric-icons-inline.css">
+    <link rel="stylesheet" type="text/css" href="../css/datatables/datatables.min.css"/>
+    <link rel="stylesheet" href="../css/datatables/responsive/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="../css/datatables/buttons/css/buttons.dataTables.min.css">
+
+    <link rel="stylesheet" href="../css/relatorio/styles.css" />
+    <link rel="stylesheet" href="../css/relatorio/main.css" />
+
+</head>
+<body>
+    <!-- Navbar -->
+<nav class="navbar text-white fixed-top nav-bar">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <div class="justify-content-start">
+        <!-- Toggle button -->
+      <button
+      id="btnMenuExpand"
+      class="navbar-toggler p-0"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target=".navbar-collapse"
+      aria-controls="home agenda relatorios visitantes"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="ms-Icon ms-Icon--GlobalNavButton text-white"></i>
+    </button>
+
+  <!-- Collapsible wrapper -->
+      <!-- Navbar brand navbar-brand -->
+      <a id="menuExpand" class="text-white mx-4" href="/dashboard/">
+          Dashboard |
+      </a>
+      <a class="text-white" href="/relatorio/">
+        Relatórios
+    </a>
+      </div>
+      <!-- Collapsible wrapper -->
+
+      <!-- Right elements -->
+      <div class="d-flex align-items-center">
+        <!-- Icon -->
+        <a class="text-reset me-3" href="#" type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#aboutModal">
+          <i class="ms-Icon ms-Icon--Help"></i>
+        </a>
+  
+
+        <!-- Avatar -->
+        <div class="dropdown">
+          <a
+            class="dropdown-toggle d-flex align-items-center hidden-arrow text-white"
+            href="#"
+            id="navbarDropdownMenuAvatar"
+            role="button"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
+              src="../img/dashboard/user_ink.svg"
+              class="rounded-circle"
+              height="25"
+              alt="Figura com desenho de avatar"
+              loading="lazy"
+            />
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="navbarDropdownMenuAvatar"
+          >
+            <li>
+              <a class="dropdown-item" href="#" type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#logoutModal">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Right elements -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+    
+
+    <aside>
+        <div id="sidebarMenu" class="d-flex flex-column flex-shrink-0 align-items-top sidebarMenuExpand">    
+            <ul class="nav flex-column mb-0">
+                <li class="nav-item w-100 pt-0 mb-0">
+                        <a href="/dashboard/" class="nav-link link-dark d-flex">
+                        <i class="ms-Icon ms-Icon--Home me-2 fs-6 my-1"></i>
+                        <span id="home" class="collapse navbar-collapse my-1">Home</span>
+                        </a>
+                </li>
+            </ul>
+            <hr class="my-1">
+            <ul class="nav flex-column mb-auto">
+              <li class="nav-item w-100 pt-0 mb-0">
+                <a href="/agenda/" class="nav-link link-dark d-flex">
+                        <i class="ms-Icon ms-Icon--Calendar me-2 fs-6 my-1"></i>
+                        <span id="agenda" class="collapse navbar-collapse">Agenda</span>
+                </a>
+              </li>
+              <li class="nav-item li-active w-100 pt-0 mb-0">
+                <a href="/relatorio/" class="nav-link link-dark d-flex active">
+                  <i class="ms-Icon ms-Icon--ReportDocument me-2 fs-6 my-1"></i>
+                  <span id="relatorios" class="collapse navbar-collapse">Relatórios</span>
+                </a>
+              </li>
+              <li class="nav-item w-100 pt-0 mb-0">
+                <a href="/exportar/" class="nav-link link-dark d-flex">
+                    <i class="ms-Icon ms-Icon--Export me-2 fs-6 my-1"></i>
+                    <span id="exportar" class="collapse navbar-collapse">Exportar</span>
+                </a>
+              </li>
+              <!-- <li class="nav-item w-100 pt-0 mb-0">
+                <a href="#" class="nav-link link-dark d-flex">
+                  <i class="ms-Icon ms-Icon--Calendar me-2 fs-6 my-1"></i>
+                  <span id="agenda" class="collapse navbar-collapse">Agenda</span>
+                </a>
+              </li>
+              <li class="nav-item w-100 pt-0 mb-0">
+                <a href="#" class="nav-link link-dark d-flex">
+                  <i class="ms-Icon ms-Icon--Calendar me-2 fs-6 my-1"></i>
+                  <span id="agenda" class="collapse navbar-collapse">Agenda</span>
+                </a>
+              </li> -->
+            </ul>
+            <hr>
+          </div>        
+    </aside>
+    
+    <main id="main" class="main w-100">
+            <nav class="navbar navbar-expand-lg nav-bg container-fluid">
+              <div class="row">
+                  <div class="row">
+                    <span class="col-3">Relatório</span>
+                    <select class="form-select form-select-sm col mb-3" aria-label=".form-select-sm example">
+                      <option value="0"></option>
+                      <option value="1">Consolidado</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </div>
+                  <div class="row">
+                    <div class="col row">
+                      <span class="col">Data de Início</span>
+                      <input class="form-control form-control-sm col" id="formFileSm" type="date">    
+                    </div>
+                    <div class="col row">
+                      <span class="col">Data de Fim</span>
+                      <input class="form-control form-control-sm col" id="formFileSm" type="date">
+                    </div>
+                  </div>  
+              </div>
+              
+              <div class="">
+                <button class="btn btn-info" type="button">Ver Relatório</button>
+              </div>
+            </nav>
+            <div class="p-2">
+              <table class="table table-bordered tables-font">
+                <thead class="table-light">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td scope="row">1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+    </main>
+
+
+
+    <!-- Modal -->
+    <div class="modal top " id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
+      <div class="modal-dialog modal-lg  modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="aboutModalLabel">Sobre</h5>
+            <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+            <p class="text-center">
+              Desenvolvido pelos alunos da <img src="../img/Univesp_logo_png_rgb.png" alt="Logo marca da Universidade Virtual do Estado de São Paulo" width="200px">
+              <p class="text-center">
+              BRUNA DOS SANTOS SAMPAIO <br>
+              DOUGLAS TOFFOLETTO <br>
+              FERNANDA MARIA DIAS DE GOZ <br>
+              MARCELO LAZARO DE OLIVEIRA <br>
+              PAULO SOUZA DANEU <br>
+              VITOR B. R. SILVA <br>
+              VIVIANE BEZERRA CAMPOS
+              </p>
+
+            </p>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+              Fechar
+            </button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal top fade" id="logoutModal" tabindex="-1" aria-labelledby="logouModalLabel" aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
+      <div class="modal-dialog modal-sm  modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="logouModalLabel">Logout</h5>
+            <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">Deseja realmente sair do sistema?</div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+              Não
+            </button>
+            <button type="button" class="btn btn-primary">Sim</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script type="text/javascript" src="../js/mdb.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/popper.js"></script>
+    <script type="text/javascript" src="../js/datatables/datatables.min.js"></script>
+    <script type="text/javascript" src="../js/datatables/responsive/js/responsive.dataTables.min.js"></script>
+    <script type="text/javascript" src="../js/datatables/responsive/js/responsive.dataTables.min.js"></script>
+    <script type="text/javascript" src="../js/datatables/buttons/js/buttons.dataTables.min.js"></script>
+    <!-- <script type="text/javascript" src="../js/datatables/pdfmake/pdfmake.min.js"></script> -->
+    <!-- <script type="text/javascript" src="../js/datatables/pdfmake/vfs_fonts.js"></script> -->
+    <script type="text/javascript" src="../js/datatables/pdfmake/build/pdfmake.min.js"></script>
+    <script type="text/javascript" src="../js/datatables/pdfmake/build/vfs_fonts.js"></script>
+    <script type="text/javascript" src="../js/datatables/JSZip/jszip.min.js"></script>
+    <script type="text/javascript" src="../js/relatorio/scripts.js"></script>
+    <script type="text/javascript" src="../js/chartjs/dist/chart.min.js"></script>
+    <script type="text/javascript" src="../js/relatorio/main.js"></script>
+</body>
+</html>
