@@ -1,0 +1,3 @@
+Editado index.html 
+linha 161 -> adicionado id="numero"
+linha 133 -> editado id="institution-name" para id="institution" devido a conflito no PHP/MYSQL
