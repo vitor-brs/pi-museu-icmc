@@ -160,18 +160,42 @@ const isValidPhone = (phone) => {
 };
 const phonenumberTag = document.getElementById('phonenumber')
 phonenumberTag.addEventListener('blur',(ev)=>{
-    console.log(isValidPhone(phonenumberTag.value))
+    
     const number = isValidPhone(phonenumberTag.value)
-    if ((phonenumberTag.value != "") && (number < 10 || number > 11) ) {
+    // if ((phonenumberTag.value != "") && (number < 10 || number > 11) ) {
+    if ((phonenumberTag.value != "") && (number == false ) ) {
         $("#modal-invalid-phonenumber").modal('show')
         phonenumberTag.value = ""
     }
 });
 
+function mascara(o,f){
+    v_obj=o
+    v_fun=f
+    setTimeout("execmascara()",1)
+}
+function execmascara(){
+    v_obj.value=v_fun(v_obj.value)
+}
+function mtel(v){
+    v=v.replace(/\D/g,""); //Remove tudo o que não é dígito
+    v=v.replace(/^(\d{2})(\d)/g,"($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
+    v=v.replace(/(\d)(\d{4})$/,"$1-$2"); //Coloca hífen entre o quarto e o quinto dígitos
+    return v;
+}
+function id( el ){
+	return document.getElementById( el );
+}
+window.onload = function(){
+	id('phonenumber').onkeyup = function(){
+		mascara( this, mtel );
+	}
+}
+
 function addVisita(visita, texto) {
     const addHeaderVisita = '<section class="mb-3"><h5 class="fonts-custom fs-5">'+ texto +'</h5>'
-    const addNecessidadeEspecial = '<div class="form-check form-switch"><input class="form-check-input" type="checkbox" role="switch" id="flexSwitch-especial'+ visita +'" onclick=" onNecessidadeEspecial(' + visita + ') "/><label class="form-check-label" for="flexSwitch-especial'+ visita +'">Possui necessidade especial? </label></div><textarea id="tipo-necessidade'+ visita +'" class="form-control" aria-label="Indique qual sua necessidade especial" placeholder="Indique qual" disabled required></textarea>'
-    const addDataVisita = '<span>Escolha uma data</span><input class="form-control" type="date" onchange="validaData(' + visita +')" id="initial-date' + visita + '" required/><span>Informe o número de visitantes</span><input class="form-control mb-2" type="number" id="initial-visitor'+ visita +'" required/> </section>'
+    const addNecessidadeEspecial = '<div class="form-check form-switch"><input class="form-check-input" type="checkbox" role="switch" id="flexSwitch-especial'+ visita +'" name="n_especial'+ visita +'" onclick=" onNecessidadeEspecial(' + visita + ') "/><label class="form-check-label" for="flexSwitch-especial'+ visita +'">Possui necessidade especial? </label></div><textarea id="tipo-necessidade'+ visita +'" name="q_especial'+ visita +'" class="form-control" aria-label="Indique qual sua necessidade especial" placeholder="Indique qual" disabled required></textarea>'
+    const addDataVisita = '<span>Escolha uma data</span><input class="form-control" type="date" onchange="validaData(' + visita +')" id="initial-date' + visita + '" name="data'+ visita +'" required/><span>Informe o número de visitantes</span><input class="form-control mb-2" type="number" id="initial-visitor'+ visita +'" name="visitante'+ visita +'" required/> </section>'
 
     return addHeaderVisita + addNecessidadeEspecial + addDataVisita
 }
