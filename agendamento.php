@@ -27,6 +27,19 @@ $visitantes2 = ""; //$_POST['visitantes2'];
 $visitantes3 = ""; //$_POST['visitantes3'];
 // necessidade especial
 $n_especial = $_POST['n_especial'];
+$q_especial = $_POST['q_especial'];
+
+if(isset($_POST['data2'])){
+    $data2 = $_POST['data2'];
+    $visitantes2 = $_POST['visitante2'];
+    $n_especial2 = $_POST['n_especial2'];
+}
+
+if(isset($_POST['data3'])){
+    $data3 = $_POST['data3'];
+    $visitantes3 = $_POST['visitante3'];
+    $n_especial3 = $_POST['n_especial3'];
+}
 
 $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
 
@@ -38,8 +51,8 @@ if (mysqli_connect_errno()) {
 
 // Grava dados na tabela INSTITUICAO_RESPONSAVEL
 
-$sql="INSERT INTO INSTITUICAO_RESPONSAVEL (NOME, INSTITUICAO, TIPO_ORGANIZACAO, CEP, RUA, NUMERO, BAIRRO,CIDADE, UF, OCUPACAO, EMAIL, TELEFONE, SESSAO) 
-VALUES('$fullname','$institution' ,'$tipo_org', '$cep' ,'$rua','$numero','$bairro','$cidade','$uf', '$employment','$email','$phonenumber','$sessao')";
+$sql="INSERT INTO INSTITUICAO_RESPONSAVEL (NOME, INSTITUICAO, TIPO_ORGANIZACAO, CEP, RUA, NUMERO, BAIRRO,CIDADE, UF, OCUPACAO, EMAIL, TELEFONE, SESSAO, DT_CAD) 
+VALUES('$fullname','$institution' ,'$tipo_org', '$cep' ,'$rua','$numero','$bairro','$cidade','$uf', '$employment','$email','$phonenumber','$sessao', '2022-05-24')";
 
 
 if (mysqli_query($conn, $sql) == NULL) {
@@ -63,8 +76,8 @@ $result = mysqli_query($conn, $sqls);
 
 // Grava tabela **** AGENDA *****
 
-$sql="INSERT INTO AGENDA (DATA, NUM_VISITANTES, N_ESPECIAL, FK_INSTITUICAO_RESPONSAVEL_ID)
-VALUES('$data1', '$visitantes1', '$n_especial' ,'$chave_id')";
+$sql="INSERT INTO AGENDA (DATA, NUM_VISITANTES, N_ESPECIAL, FK_INSTITUICAO_RESPONSAVEL_ID, STATUS, DESCRICAO_NECESSIDADE_ESPECIAL)
+VALUES('$data1', '$visitantes1', '$n_especial' ,'$chave_id', 'Agendado', '$q_especial')";
 
 if (mysqli_query($conn, $sql) == NULL) {
     echo "Error: " . $sql . ":-" . mysqli_error($conn);
@@ -74,8 +87,8 @@ if (mysqli_query($conn, $sql) == NULL) {
 
 // verifica se foi agendada uma segunda data e salva
 if ($data2 != NULL){
-    $sql="INSERT INTO AGENDA (DATA, NUM_VISITANTES, N_ESPECIAL, FK_INSTITUICAO_RESPONSAVEL_ID)
-    VALUES('$data2', '$visitantes2', '$n_especial' ,'$chave_id')";
+    $sql="INSERT INTO AGENDA (DATA, NUM_VISITANTES, N_ESPECIAL, FK_INSTITUICAO_RESPONSAVEL_ID, STATUS, DESCRICAO_NECESSIDADE_ESPECIAL)
+    VALUES('$data2', '$visitantes2', '$n_especial2' ,'$chave_id', 'Agendado', '$q_especial2')";
 
     if (mysqli_query($conn, $sql) == NULL) {
         echo "Error: " . $sql . ":-" . mysqli_error($conn);
@@ -84,8 +97,8 @@ if ($data2 != NULL){
     }
 // verifica se foi agendada uma segunda data e salva
     if ($data3 != NULL) {
-        $sql = "INSERT INTO AGENDA (DATA, NUM_VISITANTES, N_ESPECIAL, FK_INSTITUICAO_RESPONSAVEL_ID)
-        VALUES('$data3', '$visitantes3', '$n_especial' ,'$chave_id')";
+        $sql = "INSERT INTO AGENDA (DATA, NUM_VISITANTES, N_ESPECIAL, FK_INSTITUICAO_RESPONSAVEL_ID, STATUS, DESCRICAO_NECESSIDADE_ESPECIAL)
+        VALUES('$data3', '$visitantes3', '$n_especial3' ,'$chave_id', 'Agendado', '$q_especial3')";
 
         if (mysqli_query($conn, $sql) == NULL) {
             echo "Error: " . $sql . ":-" . mysqli_error($conn);
