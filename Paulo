@@ -4,3 +4,12 @@ linha 133 -> editado id="institution-name" para id="institution" devido a confli
 
 
 acrescentado o campo INSTITUICAO no banco de dados
+
+******** novo arquivo chamado pelo index.html -> genda.php ***************
+
+Foi abandonado o acesso ao BD de mysqli para PDO que é orientado a objeto
+
+Renomeado o campo DATA para ADATA devido a conflito no PDO - tabela AGENDA
+Excluido o campo SESSAO devido ao uso do comando lastinsert(ID) - tabela INSTITUICAO_RESPONSAVEL
+
+
