@@ -57,7 +57,7 @@
       <a id="menuExpand" class="text-white mx-4" href="dashboard.php">
           Dashboard |
       </a>
-      <a class="text-white" href="relatorio.php">
+      <a class="text-white" href="exportar.php">
         Exportar
     </a>
       </div>
