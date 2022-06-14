@@ -6,10 +6,10 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>Formulário de Agendamento</title>
     <!-- MDB icon -->
-    <link rel="icon" href="img/museu-favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="assets/img/museu-favicon.ico" type="image/x-icon" />
     <!-- Font Awesome -->
     <link
-      rel="stylesheet" href="css/fontawesome-free/css/all.min.css"/>
+      rel="stylesheet" href="assets/css/fontawesome-free/css/all.min.css"/>
     <!-- Google Fonts Roboto -->
     <link
       rel="stylesheet"
@@ -17,16 +17,14 @@
     />
 
     <!-- MDB -->
-    <link rel="stylesheet" href="css/mdb.min.css" />
-    <!-- <link rel="stylesheet" href="css/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" />
-    <link rel="stylesheet/less" type="text/css" href="css/bootstrap-datepicker/less/datepicker.less" /> -->
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="assets/css/mdb.min.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body class="d-flex flex-column min-vh-100">
 
     <header class="text-center bg-image p-0"
     style="
-      background-image: url('./img/porta.jpg');
+      background-image: url('assets/img/porta.jpg');
       height: 535px;
 
     ">
@@ -49,31 +47,31 @@
           <div class="collapse navbar-collapse" id="navbarMenu">
             <div class="position-absolute top-0 start-0 p-3 p-t-3 text-white">
               <p class="fs-5">
-                <img src="./img/logo_museu.png" alt="Logo do museu de computação" width="80">
+                <img src="assets/img/logo_museu.png" alt="Logo do museu de computação" width="80">
                 Site Museu ICMC
               </p> 
             </div>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">Museu</a>
+                <a class="nav-link" aria-current="page" href="https://mc.icmc.usp.br/">Museu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Sobre o Museu</a>
+                <a class="nav-link" href="https://mc.icmc.usp.br/sobre-o-museu">Sobre o Museu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Exposições Virtuais</a>
+                <a class="nav-link" href="https://mc.icmc.usp.br/exposições-virtuais">Exposições Virtuais</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Exposições Locais</a>
+                <a class="nav-link" href="https://mc.icmc.usp.br/exposições-locais">Exposições Locais</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Doações</a>
+                <a class="nav-link" href="https://mc.icmc.usp.br/doações">Doações</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="#">Visita Guiada</a>
+                <a class="nav-link" href="index.html">Visita Guiada</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Museu na mídia</a>
+                <a class="nav-link" href="https://mc.icmc.usp.br/museu-na-mídia">Museu na mídia</a>
               </li>
             </ul>
           </div>
@@ -82,7 +80,7 @@
       <!-- Navbar -->
       <div class="position-absolute start-0 py-5">
         <p class="py-3 px-2 text-white" id="alunos-top">
-          Desenvolvido pelos alunos da <br> <a href="https://www.univesp.br"> <img src="./img/Univesp_logo_png_rgb.png" alt="Logo marca da universidade virtual do estado de são paulo" width="200px"></a> <br>
+          Desenvolvido pelos alunos da <br> <a href="https://www.univesp.br"> <img src="assets/img/Univesp_logo_png_rgb.png" alt="Logo marca da universidade virtual do estado de são paulo" width="200px"></a> <br>
           BRUNA DOS SANTOS SAMPAIO <br>
           DOUGLAS TOFFOLETTO <br>
           FERNANDA MARIA DIAS DE GOZ <br>
@@ -132,7 +130,7 @@
                 <input class="form-control mb-2" type="text" placeholder="Nome completo" id="fullname" name="fullname" required>
                 <input class="form-control mb-2" type="text" placeholder="Ocupação" id="employment" name="employment" required>
                 <input class="form-control mb-2" type="text" placeholder="E-mail" id="email" name="email" required>
-                <input class="form-control mb-2" type="text" placeholder="Telefone com DDD(Opcional)" id="phonenumber" name="phonenumber">
+                <input class="form-control mb-2" type="text" placeholder="Telefone com DDD(Opcional)" id="phonenumber" name="phonenumber" maxlength="15">
               </div>
           </section>
           <!-- Dados visitante -->
@@ -165,7 +163,7 @@
                   <div id="others-org">
                   </div>
 
-                  <input class="form-control mb-2" type="text" placeholder="CEP" id="cep" name="cep" required>
+                  <input class="form-control mb-2" type="text" placeholder="CEP" id="cep" name="cep" maxlength="9"  required>
                   <div class="d-flex flex-row">
                       <input class="form-control mb-2 pr-3 me-2" type="text" placeholder="Rua" id="rua" name="rua" required>
                       <div class="col-xs-1">
@@ -188,7 +186,7 @@
            <section class="mb-3">
             <h5 class="fonts-custom fs-4">Necessidade Especial</h3>
             <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitch-especial" name="n_especial" />
+              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitch-especial" name="n_especial"/>
               <label class="form-check-label" for="flexSwitch-especial">Possui necessidade especial? </label>
             </div>
             <textarea id="tipo-necessidade" class="form-control" aria-label="With textarea" placeholder="Indique qual" name="q_especial" disabled required></textarea>
@@ -199,9 +197,9 @@
            <section class="mb-5">
             <h5 class="fonts-custom fs-4">Período de Visitação</h3>
               <span>Escolha uma data</span>
-              <input class="form-control" type="date" id="initial-date" name="data" required/>
+              <input class="form-control" type="date" id="initial-date" name="data1" required/>
               <span>Informe o número de visitantes</span>
-              <input class="form-control mb-2" type="number" id="initial-visitor" name="visitante" required/>
+              <input class="form-control mb-2" type="number" id="initial-visitor" name="num-visitante1" required/>
               <div id="segunda-visita">
               </div>
               <div id="terceira-visita">
@@ -226,25 +224,6 @@
     </main>
 
 <!-- main -->
-
-<!-- Modal -->
-<div id="Modal" class="modal fade" tabindex="-1" role="Caixa de dialogo com mensagem de envio com sucesso">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Sucesso</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" data-mdb-toggle="modal"></button>
-      </div>
-      <div class="modal-body">
-        <p>Fique atento! Um representante do museu entrará em contato com você para confirmar sua visita.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-mdb-toggle="modal" data-bs-dismiss="modal">Fechar</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Modal -->
 
 <!-- Modal CEP Not Found -->
 <div id="modal-cep-not-found" class="modal fade" tabindex="-1" role="Caixa de dialogo com mensagem de cep não encontrado">
@@ -401,8 +380,8 @@
                       <div class="mb-3">CONTATO</div>
                       <div>Telefone: (16) 3373-9146 <br> E-mail: museu@icmc.usp.br</div>
                     </p>
-                    <p id="alunos-footer">
-                      Desenvolvido pelos alunos da <a href="https://www.univesp.br"> <img src="./img/Univesp_logo_png_rgb.png" alt="Logo marca da universidade virtual do estado de são paulo" width="200px"></a> <br>
+                    <p>
+                      Desenvolvido pelos alunos da <a href="https://www.univesp.br"> <img src="assets/img/Univesp_logo_png_rgb.png" alt="Logo marca da universidade virtual do estado de são paulo" width="200px"></a> <br>
                       BRUNA DOS SANTOS SAMPAIO <br>
                       DOUGLAS TOFFOLETTO <br>
                       FERNANDA MARIA DIAS DE GOZ <br>
@@ -427,22 +406,22 @@
 
                     <ul class="list-unstyled mb-0">
                       <li>
-                        <a href="#!" class="text-white">O Fundador</a>
+                        <a href="https://mc.icmc.usp.br/museu/o-fundador" class="text-white">O Fundador</a>
                       </li>
                       <li>
-                        <a href="#!" class="text-white">História do Museu</a>
+                        <a href="https://mc.icmc.usp.br/museu/história-do-museu" class="text-white">História do Museu</a>
                       </li>
                       <li>
-                        <a href="#!" class="text-white">Sobre o Museu</a>
+                        <a href="https://mc.icmc.usp.br/sobre-o-museu" class="text-white">Sobre o Museu</a>
                       </li>
                       <li>
-                        <a href="#!" class="text-white">Exposições Virtuais</a>
+                        <a href="https://mc.icmc.usp.br/exposições-virtuais" class="text-white">Exposições Virtuais</a>
                       </li>
                       <li>
-                        <a href="#!" class="text-white">Exposições Locais</a>
+                        <a href="https://mc.icmc.usp.br/exposições-locais" class="text-white">Exposições Locais</a>
                       </li>
                       <li>
-                        <a href="#!" class="text-white">Museu na mídia</a>
+                        <a href="https://mc.icmc.usp.br/museu-na-mídia" class="text-white">Museu na mídia</a>
                       </li>
                     </ul>
                   </div>
@@ -454,12 +433,14 @@
 
                     <ul class="list-unstyled mb-0">
                       <li>
-                        <a href="#!" class="text-white">Doações</a>
+                        <a href="https://mc.icmc.usp.br/doações" class="text-white">Doações</a>
                       </li>
                       <li>
-                        <a href="#!" class="text-white">Agendamento de Visita Guiada</a>
+                        <a href="index.html" class="text-white">Agendamento de Visita Guiada</a>
                       </li>
-
+                      <li>
+                        <a href="livroDeVisitas.php" class="text-white">Livro de Visitas</a>
+                      </li>
                     </ul>
                   </div>
                   <!--Grid column-->
@@ -469,7 +450,7 @@
 
                     <ul class="list-unstyled mb-0">
                       <li>
-                        <a href="#!" class="text-white">Acesso Museu</a>
+                        <a href="login.php" class="text-white">Acesso Museu</a>
                       </li>
                     </ul>
                   </div>
@@ -493,6 +474,18 @@
 </footer>
 <!-- Footer -->
 
+
+<!-- MDB -->
+<script type="text/javascript" src="assets/js/mdb.min.js"></script>
+<!-- Custom scripts -->
+<script type="text/javascript"></script>
+
+<script src="assets/js/jquery.min.js"></script>
+<!-- <script src="js/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script> -->
+<script src="assets/js/script.js"></script>
+<script src="assets/js/popper.js"></script>
+
+
 <!-- Libras -->
 <div vw class="enabled">
   <div vw-access-button class="active"></div>
@@ -505,17 +498,5 @@
   new window.VLibras.Widget('https://vlibras.gov.br/app');
 </script>
 <!-- Libras -->
-
-    <!-- MDB -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
-    <!-- Custom scripts -->
-    <script type="text/javascript"></script>
-
-    <script src="js/jquery.min.js"></script>
-    <!-- <script src="js/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script> -->
-    <script src="js/script.js"></script>
-    <script src="js/popper.js"></script>
-
-  
   </body>
 </html>
