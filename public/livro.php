@@ -5,12 +5,12 @@
   }
   require_once 'Connection.php';
   if(isset($_POST['nome'])){
-    $nome = $_POST['nome'];
-    $ocupacao = $_POST['ocupacao'];
-    $dataNascimento = $_POST['data-nascimento'];
-    $cidade = $_POST['cidade'];
-    $uf = $_POST['uf'];
-    $mensagem = $_POST['comentarios'];
+    $nome = addslashes($_POST['nome']);
+    $ocupacao = addslashes($_POST['ocupacao']);
+    $dataNascimento = addslashes($_POST['data-nascimento']);
+    $cidade = addslashes($_POST['cidade']);
+    $uf = addslashes($_POST['uf']);
+    $mensagem = addslashes($_POST['comentarios']);
     $dataCad = date("Y-m-d");
   
     $c = new Connection;

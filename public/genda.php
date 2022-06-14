@@ -128,20 +128,20 @@ if (isset($_POST['outros'])){
     $tipo_org = $_POST['outros'];
     }
 
-$cep = $_POST['cep'];
-$rua = $_POST['rua'];
-$numero = $_POST['numero'];
-$bairro = $_POST['bairro'];
-$cidade = $_POST['cidade'];
-$uf = $_POST['uf'];
-$employment = $_POST['employment'];
-$email = $_POST['email'];
-$phonenumber = $_POST['phonenumber'];
+$cep = addslashes($_POST['cep']);
+$rua = addslashes($_POST['rua']);
+$numero = addslashes($_POST['numero']);
+$bairro = addslashes($_POST['bairro']);
+$cidade = addslashes($_POST['cidade']);
+$uf = addslashes($_POST['uf']);
+$employment = addslashes($_POST['employment']);
+$email = addslashes($_POST['email']);
+$phonenumber = addslashes($_POST['phonenumber']);
 // datas e numero de visitantes (3 datas)
-$data1 = $_POST['data1'];
+$data1 = addslashes($_POST['data1']);
 $data2 = ""; // $_POST['data2'];
 $data3 = ""; // $_POST['data3'];
-$visitantes1 = $_POST['num-visitante1'];
+$visitantes1 = addslashes($_POST['num-visitante1']);
 $visitantes2 = ""; //$_POST['visitantes2'];
 $visitantes3 = ""; //$_POST['visitantes3'];
 $n_especial = "";
@@ -153,28 +153,28 @@ $q_especial3 = "";
 
 // necessidade especial
 if(isset($_POST['n_especial'])){
-    $n_especial = $_POST['n_especial'];
-    $q_especial = $_POST['q_especial'];
+    $n_especial = addslashes($_POST['n_especial']);
+    $q_especial = addslashes($_POST['q_especial']);
 }
 
 $data = date("Y-m-d");
 
 if(isset($_POST['data2'])){
-    $data2 = $_POST['data2'];
-    $visitantes2 = $_POST['visitante2'];
+    $data2 = addslashes($_POST['data2']);
+    $visitantes2 = addslashes($_POST['visitante2']);
     if (isset($_POST['n_especial2'])) {
-        $n_especial2 = $_POST['n_especial2'];
-        $q_especial2 = $_POST['q_especial2'];
+        $n_especial2 = addslashes($_POST['n_especial2']);
+        $q_especial2 = addslashes($_POST['q_especial2']);
     }
 }
 
 
 if(isset($_POST['data3'])){
-    $data3 = $_POST['data3'];
-    $visitantes3 = $_POST['visitante3'];
+    $data3 = addslashes($_POST['data3']);
+    $visitantes3 = addslashes($_POST['visitante3']);
     if (isset($_POST['n_especial3'])) {
-        $n_especial3 = $_POST['n_especial3'];
-        $q_especial3 = $_POST['q_especial3'];
+        $n_especial3 = addslashes($_POST['n_especial3']);
+        $q_especial3 = addslashes($_POST['q_especial3']);
     }
 }
 
