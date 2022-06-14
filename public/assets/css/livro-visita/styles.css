@@ -6,7 +6,7 @@ h1, h2 {
     line-height: 50px;
 }
 .body-background-image{
-    background-image: url("/public/img/livro-visita/pexels-karolina-grabowska-4467739.jpg");
+    background-image: url("/assets/img/livro-visita/pexels-karolina-grabowska-4467739.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -42,11 +42,11 @@ body, html{
 }
 @font-face{
     font-family: opensans;
-    src: url(/css/Open_Sans/static/OpenSans/OpenSans-Regular.ttf);
+    src: url(/assets/css/Open_Sans/static/OpenSans/OpenSans-Regular.ttf);
 }
 @font-face{
     font-family: opensans-light;
-    src: url(/public/css/Open_Sans/static/OpenSans/OpenSans-Light.ttf);
+    src: url(/assets/css/Open_Sans/static/OpenSans/OpenSans-Light.ttf);
 }
 .top-content .form-box {
 	padding-top: 80px;
