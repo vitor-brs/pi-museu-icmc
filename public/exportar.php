@@ -57,7 +57,7 @@
       <a id="menuExpand" class="text-white mx-4" href="dashboard.php">
           Dashboard |
       </a>
-      <a class="text-white" href="exportar.php">
+      <a class="text-white" href="relatorio.php">
         Exportar
     </a>
       </div>
@@ -151,6 +151,7 @@
                       <option value="0">Dados Instituição/Responsável pela visita</option>
                       <option value="1">Dados Agendamento</option>
                       <option value="2">Dados Livro de Visitas</option>
+                      <option value="3">Dados Instituição/Responsável e Agendamento</option>
                     </select>
                   </div>
                   <div class="row">
@@ -218,7 +219,22 @@
                           echo '<div class="col-8"><a type=button class="btn btn-success" href="'.$filename.'">Download <i class="ms-Icon ms-Icon--Download text-white"></i></a></div>';
                           echo '</div>';
                         }
-                        break;           
+                        break;
+                  case 3:
+                        
+                        if($dataInicial && $dataFinal){
+                          
+                          $result = tabInstituicaoAgenda($dataInicial, $dataFinal);
+                          $filename = 'dados_InstituicaoAgenda.csv';
+                          $arr = ['INSTITUICAO', 'NOME', 'TIPO_ORGANIZACAO', 'CEP', 'RUA', 'NUMERO', 'BAIRRO', 'CIDADE', 'UF', 'DT_CAD', 'OCUPACAO', 'EMAIL', 'TELEFONE',
+                          'DATA', 'NUM_VISITANTES', 'STATUS', 'N_ESPECIAL', 'DESCRICAO_NECESSIDADE_ESPECIAL', 'MOTIVO_STATUS', 'HORA'];
+                          export($result, $filename, $arr);
+                          echo '<div class="row">
+                          <div class="col-4"><h4>Dados Instituição/Responsável e Agendamento entre ' . $dataInicial . ' e ' . $dataFinal . ' organizado por data de agendamento.</h4></div>';
+                          echo '<div class="col-8"><a type=button class="btn btn-success" href="'.$filename.'">Download <i class="ms-Icon ms-Icon--Download text-white"></i></a></div>';
+                          echo '</div>';
+                        }
+                        break;            
                   
                 }
               }

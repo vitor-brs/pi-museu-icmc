@@ -42,6 +42,19 @@
     $row = null;
   }
 
+  function tabInstituicaoAgenda($dataInicial, $dataFinal){
+    $c =  new Connection;
+    $row = $c->open('museu');
+
+    $sql = "SELECT INSTITUICAO, NOME, TIPO_ORGANIZACAO, CEP, RUA, NUMERO, BAIRRO, CIDADE, UF, DT_CAD, OCUPACAO, EMAIL, TELEFONE,
+    DATA, NUM_VISITANTES, STATUS, N_ESPECIAL, DESCRICAO_NECESSIDADE_ESPECIAL, MOTIVO_STATUS, HORA FROM INSTITUICAO_RESPONSAVEL INNER JOIN AGENDA ON INSTITUICAO_RESPONSAVEL.ID = AGENDA.FK_INSTITUICAO_RESPONSAVEL_ID WHERE DATA BETWEEN '$dataInicial' AND '$dataFinal'";
+
+    $r = $row->query($sql);
+    return $result = $r->fetchAll(PDO::FETCH_ASSOC);
+    $c =  null;
+    $row = null;
+  }
+
   function export($data, $filename, $arr){
     // $filename = 'dados.csv';
     
