@@ -13,11 +13,10 @@ if(isset($_POST['usuario']) && isset($_POST['senha'])){
   $row = $c->open('museu');
   $dados = $row->query($sql);
   $result = $dados->fetch(PDO::FETCH_ASSOC);
-  $c = null;
-  $row = null;
   if($result) {
     session_start();
     $_SESSION['logged'] = 'logged';
+    $_SESSION['LAST_ACTIVITY'] = time();
     header("Location: dashboard.php");
     exit();
   }else{
@@ -77,25 +76,25 @@ if(isset($_POST['usuario']) && isset($_POST['senha'])){
               </div>
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="https://mc.icmc.usp.br/">Museu</a>
+                  <a class="nav-link" aria-current="page" href="#">Museu</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="https://mc.icmc.usp.br/sobre-o-museu">Sobre o Museu</a>
+                  <a class="nav-link" href="#">Sobre o Museu</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="https://mc.icmc.usp.br/exposições-virtuais">Exposições Virtuais</a>
+                  <a class="nav-link" href="#">Exposições Virtuais</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="https://mc.icmc.usp.br/exposições-locais">Exposições Locais</a>
+                  <a class="nav-link" href="#">Exposições Locais</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="https://mc.icmc.usp.br/doações">Doações</a>
+                  <a class="nav-link" href="#">Doações</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                   <a class="nav-link" href="index.html">Visita Guiada</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="https://mc.icmc.usp.br/museu-na-mídia">Museu na mídia</a>
+                  <a class="nav-link" href="#">Museu na mídia</a>
                 </li>
               </ul>
             </div>
@@ -228,22 +227,22 @@ if(isset($_POST['usuario']) && isset($_POST['senha'])){
 
                     <ul class="list-unstyled mb-0">
                       <li>
-                        <a href="https://mc.icmc.usp.br/museu/o-fundador" class="text-white">O Fundador</a>
+                        <a href="#!" class="text-white">O Fundador</a>
                       </li>
                       <li>
-                        <a href="https://mc.icmc.usp.br/museu/história-do-museu" class="text-white">História do Museu</a>
+                        <a href="#!" class="text-white">História do Museu</a>
                       </li>
                       <li>
-                        <a href="https://mc.icmc.usp.br/sobre-o-museu" class="text-white">Sobre o Museu</a>
+                        <a href="#!" class="text-white">Sobre o Museu</a>
                       </li>
                       <li>
-                        <a href="https://mc.icmc.usp.br/exposições-virtuais" class="text-white">Exposições Virtuais</a>
+                        <a href="#!" class="text-white">Exposições Virtuais</a>
                       </li>
                       <li>
-                        <a href="https://mc.icmc.usp.br/exposições-locais" class="text-white">Exposições Locais</a>
+                        <a href="#!" class="text-white">Exposições Locais</a>
                       </li>
                       <li>
-                        <a href="https://mc.icmc.usp.br/museu-na-mídia" class="text-white">Museu na mídia</a>
+                        <a href="#!" class="text-white">Museu na mídia</a>
                       </li>
                     </ul>
                   </div>
@@ -255,14 +254,12 @@ if(isset($_POST['usuario']) && isset($_POST['senha'])){
 
                     <ul class="list-unstyled mb-0">
                       <li>
-                      <a href="https://mc.icmc.usp.br/doações" class="text-white">Doações</a>
+                        <a href="#!" class="text-white">Doações</a>
                       </li>
                       <li>
                         <a href="index.html" class="text-white">Agendamento de Visita Guiada</a>
                       </li>
-                      <li>
-                        <a href="livroDeVisitas.php" class="text-white">Livro de Visitas</a>
-                      </li>
+
                     </ul>
                   </div>
                   <!--Grid column-->

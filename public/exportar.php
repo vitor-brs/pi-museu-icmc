@@ -3,6 +3,12 @@
   if(!isset($_SESSION['logged'])){
     header("Location: login.php");
     exit();
+  }elseif  (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
+    session_destroy();
+    session_unset();
+    header("Location: login.php");
+    exit();
+  
   }else{
     // require_once 'Connection.php';
     require_once 'csv.php';
@@ -57,7 +63,7 @@
       <a id="menuExpand" class="text-white mx-4" href="dashboard.php">
           Dashboard |
       </a>
-      <a class="text-white" href="relatorio.php">
+      <a class="text-white" href="exportar.php">
         Exportar
     </a>
       </div>

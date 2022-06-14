@@ -3,6 +3,12 @@
   if(!isset($_SESSION['logged'])){
     header("Location: login.php");
     exit();
+  }elseif  (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
+    session_destroy();
+    session_unset();
+    header("Location: login.php");
+    exit();
+  
   }else{
     require_once 'Connection.php';
 
@@ -74,21 +80,12 @@
     $num_visitantes = $_POST['num_visitantes'.$params];
     $status = $_POST['group-select-status'.$params];
     $n_especial = $_POST['textareaNecessidadeEspecial'.$params];
-    if($n_especial != ""){
-      $sql = "UPDATE AGENDA SET DATA =:DATA, HORA =:HORA, NUM_VISITANTES =:NUM_VISITANTES, STATUS =:STATUS, DESCRICAO_NECESSIDADE_ESPECIAL =:DESCRICAO_NECESSIDADE_ESPECIAL, N_ESPECIAL =:N_ESPECIAL WHERE ID =:ID ";  
-      $c =  new Connection;
-      $row = $c->open('museu');
-      $dados = $row->prepare($sql)->execute(["DATA" =>$data, "HORA" =>$hora, "NUM_VISITANTES" =>$num_visitantes, "STATUS" =>$status, "DESCRICAO_NECESSIDADE_ESPECIAL" =>$n_especial, "N_ESPECIAL" =>"on", "ID" =>$id]);
-      $c = null;
-      $row = null;
-    }else{
-      $sql = "UPDATE AGENDA SET DATA =:DATA, HORA =:HORA, NUM_VISITANTES =:NUM_VISITANTES, STATUS =:STATUS, DESCRICAO_NECESSIDADE_ESPECIAL =:DESCRICAO_NECESSIDADE_ESPECIAL WHERE ID =:ID ";
-      $c =  new Connection;
-      $row = $c->open('museu');
-      $dados = $row->prepare($sql)->execute(["DATA" =>$data, "HORA" =>$hora, "NUM_VISITANTES" =>$num_visitantes, "STATUS" =>$status, "DESCRICAO_NECESSIDADE_ESPECIAL" =>$n_especial, "ID" =>$id]);
-      $c = null;
-      $row = null;
-    }
+    $sql = "UPDATE AGENDA SET DATA =:DATA, HORA =:HORA, NUM_VISITANTES =:NUM_VISITANTES, STATUS =:STATUS, DESCRICAO_NECESSIDADE_ESPECIAL =:DESCRICAO_NECESSIDADE_ESPECIAL WHERE ID =:ID ";
+    $c =  new Connection;
+    $row = $c->open('museu');
+    $dados = $row->prepare($sql)->execute(["DATA" =>$data, "HORA" =>$hora, "NUM_VISITANTES" =>$num_visitantes, "STATUS" =>$status, "DESCRICAO_NECESSIDADE_ESPECIAL" =>$n_especial, "ID" =>$id]);
+    $c = null;
+    $row = null;
   }
  
 ?>

@@ -3,6 +3,12 @@
   if(!isset($_SESSION['logged'])){
     header("Location: login.php");
     exit();
+  }elseif  (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
+    session_destroy();
+    session_unset();
+    header("Location: login.php");
+    exit();
+  
   }else{
     require_once 'Connection.php';
 
@@ -18,7 +24,9 @@
     if(isset($_SESSION['id'])){
       $id = $_SESSION['id'];
     }
+    
 
+    
     $sql = "SELECT * FROM INSTITUICAO_RESPONSAVEL WHERE ID = '$id'";
     $row = $c->open('museu');
     $dados = $row->query($sql);
@@ -31,9 +39,6 @@
     $dados2 = $ro->query($sqlAgenda);
     $resultAgenda = $dados2->fetchAll(PDO::FETCH_ASSOC);
     $ro=null;
-
-    $c = null;
-    $row = null;
   }
  
 ?>
@@ -162,18 +167,7 @@
                     <span id="exportar" class="collapse navbar-collapse">Exportar</span>
                 </a>
               </li>
-              <!-- <li class="nav-item w-100 pt-0 mb-0">
-                <a href="#" class="nav-link link-dark d-flex">
-                  <i class="ms-Icon ms-Icon--Calendar me-2 fs-6 my-1"></i>
-                  <span id="agenda" class="collapse navbar-collapse">Agenda</span>
-                </a>
-              </li>
-              <li class="nav-item w-100 pt-0 mb-0">
-                <a href="#" class="nav-link link-dark d-flex">
-                  <i class="ms-Icon ms-Icon--Calendar me-2 fs-6 my-1"></i>
-                  <span id="agenda" class="collapse navbar-collapse">Agenda</span>
-                </a>
-              </li> -->
+
             </ul>
             <hr>
           </div>        
@@ -489,7 +483,7 @@
             <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
               Não
             </button>
-            <a href="logout.php" type="button" class="btn btn-primary">Sim</a>
+            <button type="button" class="btn btn-primary">Sim</button>
           </div>
         </div>
       </div>

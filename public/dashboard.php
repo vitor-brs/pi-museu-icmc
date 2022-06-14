@@ -3,6 +3,12 @@
   if(!isset($_SESSION['logged'])){
     header("Location: login.php");
     exit();
+  }elseif  (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
+      session_destroy();
+      session_unset();
+      header("Location: login.php");
+      exit();
+    
   }else{
     require_once 'Connection.php';
 
@@ -14,8 +20,8 @@
 
     //Dados Cartão Agendados para Hoje
 
-    $sqlTotalAgendadosHoje = "SELECT COUNT(STATUS) as total_dia_agendado FROM AGENDA WHERE DATA = '$data' AND STATUS = 'Agendado'";
-    $sqlTotalConfirmadosHoje = "SELECT COUNT(STATUS) as total_dia_agendado FROM AGENDA WHERE DATA = '$data' AND STATUS = 'Confirmado'";
+    $sqlTotalAgendadosHoje = "SELECT COUNT(AGENDA.STATUS) as total_dia_agendado FROM AGENDA WHERE DATA = '$data' AND STATUS = 'Agendado'";
+    $sqlTotalConfirmadosHoje = "SELECT COUNT(AGENDA.STATUS) as total_dia_agendado FROM AGENDA WHERE DATA = '$data' AND STATUS = 'Confirmado'";
     
     $row = $c->open('museu');
     $agendadosHoje = $row->query($sqlTotalAgendadosHoje);
@@ -57,11 +63,8 @@
 
     $sumNecessidade =  $resultNecessidadeEspecial['total_necessidade_especial'] + $resultNecessidadeEspecial2['total_necessidade_especial'];
 
-
     $c = null;
     $row = null;
-
-
   }
 ?>
 <!DOCTYPE html>

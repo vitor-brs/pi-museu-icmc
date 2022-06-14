@@ -3,6 +3,12 @@
   if(!isset($_SESSION['logged'])){
     header("Location: login.php");
     exit();
+  }elseif  (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
+    session_destroy();
+    session_unset();
+    header("Location: login.php");
+    exit();
+  
   }else{
     require_once 'Connection.php';
 
