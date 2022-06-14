@@ -71,6 +71,7 @@
     // if ($f === false) {
     //     die('Error opening the file ' . $filename);
     // }
+    fputs( $f, $bom = chr(0xEF) . chr(0xBB) . chr(0xBF) );
     fputcsv($f, $arr, ';');
     
     foreach ($data as $row) {
