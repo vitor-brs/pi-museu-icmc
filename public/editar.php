@@ -20,8 +20,7 @@
     // $id = "";
     if(isset($_POST['btnEditar'])){
       $id = $_POST['btnEditar'];
-    }
-    if(isset($_SESSION['id'])){
+    }elseif(isset($_SESSION['id'])){
       $id = $_SESSION['id'];
     }
     
