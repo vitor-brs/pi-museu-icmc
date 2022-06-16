@@ -482,7 +482,7 @@
             <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
               Não
             </button>
-            <button type="button" class="btn btn-primary">Sim</button>
+            <a href="logout.php" type="button" class="btn btn-primary">Sim</a>
           </div>
         </div>
       </div>
