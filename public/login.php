@@ -259,7 +259,9 @@ if(isset($_POST['usuario']) && isset($_POST['senha'])){
                       <li>
                         <a href="index.html" class="text-white">Agendamento de Visita Guiada</a>
                       </li>
-
+                      <li>
+                        <a href="livroDeVisitas.php" class="text-white">Livro de Visitas</a>
+                      </li>
                     </ul>
                   </div>
                   <!--Grid column-->
