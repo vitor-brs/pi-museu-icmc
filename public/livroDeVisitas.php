@@ -89,7 +89,7 @@
           <div class="container">
               <div class="row">
                   <div class="col-sm-7 text fonts">
-                      <h1 class="text">Livro de Visitas</h1>
+                      <h1 class="text mb-3">Livro de Visitas</h1>
                       <div>
                           <p class="">
                               Conte-nos como foi sua visita ao museu, sua opinião é muito importante para nós. 

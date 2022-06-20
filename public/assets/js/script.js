@@ -204,7 +204,7 @@ function mascep(v){
 function addVisita(visita, texto) {
     const addHeaderVisita = '<section class="mb-3"><h5 class="fonts-custom fs-5">'+ texto +'</h5>'
     const addNecessidadeEspecial = '<div class="form-check form-switch"><input class="form-check-input" type="checkbox" role="switch" id="flexSwitch-especial'+ visita +'" name="n_especial'+ visita +'" onclick=" onNecessidadeEspecial(' + visita + ') "/><label class="form-check-label" for="flexSwitch-especial'+ visita +'">Possui necessidade especial? </label></div><textarea id="tipo-necessidade'+ visita +'" name="q_especial'+ visita +'" class="form-control" aria-label="Indique qual sua necessidade especial" placeholder="Indique qual" disabled required></textarea>'
-    const addDataVisita = '<span>Escolha uma data</span><input class="form-control" type="date" onchange="validaData(' + visita +')" id="initial-date' + visita + '" name="data'+ visita +'" required/><span>Informe o número de visitantes</span><input class="form-control mb-2" type="number" id="initial-visitor'+ visita +'" name="visitante'+ visita +'" required/> </section>'
+    const addDataVisita = '<span>Escolha uma data</span><input class="form-control" type="date" onblur="validaData(' + visita +')" id="initial-date' + visita + '" name="data'+ visita +'" required/><span>Informe o número de visitantes</span><input class="form-control mb-2" type="number" id="initial-visitor'+ visita +'" name="visitante'+ visita +'" required/> </section>'
 
     return addHeaderVisita + addNecessidadeEspecial + addDataVisita
 }
